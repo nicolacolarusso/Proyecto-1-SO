@@ -14,7 +14,7 @@ public class ExtraData {
     //companias a utilizar
     public final static String[] companies = {
         "Apple",
-        "HP"
+        "Hp"
     };
     /*
     OJOOO Apple va a tener un total de 18 trabajadores y Hp de 13

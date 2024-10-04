@@ -5,6 +5,7 @@
 package proyecto1so;
 
 import java.io.File;
+import Classes.ComputerCompany;
 
 /**
  *
@@ -16,18 +17,15 @@ public class mainApp {
     private static File selectedFile = new File(selectedPath);
     private static FileFunctions fileFunctions = new FileFunctions();
 */
-    // General params
+    // Parametros del dia y variables
     private static int dayDuration;
     private static int deadline;
-
-    /*General variables
-    private ??? apple;
-    private ?? Hp;
-    private static ChartManager chartManager;
-
-*/
+    private ComputerCompany apple;
+    private ComputerCompany Hp;
+    //private static ChartManager chartManager;
     private static mainApp app;
 
+    //funcion que genera la instancia global a usar en las demas clases
     public static synchronized mainApp getInstance() {
         if (getApp() == null) {
             setApp(new mainApp());
@@ -37,13 +35,12 @@ public class mainApp {
 
     public void start() {
         //ExtraFunctions.loadParams();
-      
         
-        /*Inicia la simulacion
+        //Inicia la simulacion
         getApple().start();
         getHp().start();
-        chartManager = new ChartManager();
-        */
+        //chartManager = new ChartManager();
+        
 
         /*Home home = new Home();
         home.setVisible(true);*/
@@ -95,23 +92,23 @@ public class mainApp {
         deadline = aDeadline;
     }
 
-    /*
-    public ??? getApple() {
+    
+    public ComputerCompany getApple() {
         return apple;
     }
     
-    public void setApple(???? apple) {
+    public void setApple(ComputerCompany apple) {
         this.apple = apple;
     }
 
-    public ??? getHp() {
+    public ComputerCompany getHp() {
         return Hp;
     }
 
-    public void setHp(???? Hp) {
+    public void setHp(ComputerCompany Hp) {
         this.Hp = Hp;
     }
-*/
+
     public static mainApp getApp() {
         return app;
     }
