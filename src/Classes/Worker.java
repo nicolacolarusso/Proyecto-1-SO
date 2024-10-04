@@ -206,4 +206,5 @@ public class Worker extends Thread{
     public void setStorage(Storage storage) {
         this.storage = storage;
     }
+    
 }

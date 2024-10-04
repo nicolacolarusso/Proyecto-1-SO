@@ -17,32 +17,29 @@ import Extra.ExtraFunctions;
  * @author nicolagabrielecolarusso
  */
 
-public class ProjectManager extends Thread{
+public class ProjectManager extends Worker{
     
-
+    //variables
     private String currentState;
     private int strikes;
-/*
+    //constructor de la clase 
     public ProjectManager(int company, int workerId, int type, int daysToFinish, int numOfWorkDone, int hourlyWage,
-            Drive driveRef, Semaphore mutex) {
-        super(company, workerId, type, daysToFinish, numOfWorkDone, hourlyWage, driveRef, mutex);
+            Storage storage, Semaphore mutex) {
+        super(company, workerId, type, daysToFinish, numOfWorkDone, hourlyWage, storage, mutex);
         this.currentState = "Inactivo";
         this.strikes = 0;
+        //variables constantes
     }
-
+// overrride necesario para los hilos
     @Override
     public void run() {
         while (true) {
             try {
-                // Se obtiene la duración del día total directo de la variable de app.
-                int dayDuration = App.getDayDuration();
-
-                // Duración de una hora en la simulación
+                // obtengo dias de duraciion mediante getDayDuration y una hora
+                int dayDuration = mainApp.getDayDuration();
                 int oneHour = dayDuration / 24;
 
-                // Se sabe que pasa 16 horas alterando ver anime y trabajar cada 30 mins.
-                // Por lo tanto se loopea cada 30 mins (32 intervalos de 30 mins) para las
-                // primeras 16 h.
+                // 16 horas del día logra ver anime, Cada intervalo de  30 minutos ve anime, y los siguientes 30 minutos trabaja revisando el  avance del proyecto por lo que hacemos un loop.
                 for (int i = 0; i < 32; i++) {
                     if (i % 2 == 0) {
                         this.setCurrentState("Viendo Anime");
@@ -51,25 +48,28 @@ public class ProjectManager extends Thread{
                         setCurrentState("Trabajando");
 
                     }
-                    // Duerme por la mitad de una hora de simulación
+                    // Duerme el hilo media simulacion
                     Thread.sleep(oneHour / 2);
                 }
-                // La segunda parte del día traba para actualizar 1 vez el contador
-                // Porque se actualiza 1 vez por día el dayCounter
+                // En la segunda parte del dia se intenta actualizar 1 vez
+                // Se actualiza una vez al dia el Dailycounter
                 setCurrentState("Trabajando");
                 Thread.sleep(oneHour * 8);
 
-                // Culminado el día cobra su salario
+                // Pago al final del dia
+                //
                 this.getPaid();
 
-                this.getMutex().acquire();
+                this.getSemaphore().acquire();
 
                 this.updateDeadlineCountdown();
                 this.updateCountdown();
-                ExtraFunctions.calculateTotalCost(this.company, this.accumulatedSalary);
+                ExtraFunctions.calcularCostoTotal(this.company, this.accumulatedSalary);
                 this.setAccumulatedSalary(0);
+                //se asigna de nuevo 
 
-                this.getMutex().release();
+                this.getSemaphore().release();
+                //se libera
 
             } catch (InterruptedException ex) {
                 Logger.getLogger(ProjectManager.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,40 +80,39 @@ public class ProjectManager extends Thread{
     private void updateDeadlineCountdown() {
         // Lógica para actualizar el contador de días restantes
         if (this.company == 0) {
-            if (app.getNickelodeon().getRemainingDays() != 0) {
-                app.getNickelodeon().decreaceRemainingDays();
+            if (app.getApple().getRemainingDays() != 0) {
+                app.getApple().decreaceRemainingDays();
             }
         } else {
-            if (app.getCartoonNetwork().getRemainingDays() != 0) {
-                app.getCartoonNetwork().decreaceRemainingDays();
+            if (app.getHp().getRemainingDays() != 0) {
+                app.getHp().decreaceRemainingDays();
             }
         }
     }
-
+    //actualizar el contador en cualquier compańia
     private void updateCountdown() {
         if (this.company == 0) {
-            app.getNickelodeon().setTotalDays(app.getNickelodeon().getTotalDays() + 1);
+            app.getApple().setTotalDays(app.getApple().getTotalDays() + 1);
         } else {
-            app.getCartoonNetwork().setTotalDays(app.getCartoonNetwork().getTotalDays() + 1);
+            app.getHp().setTotalDays(app.getHp().getTotalDays() + 1);
         }
     }
-
+    
     private void getPaid() {
-        // Asumiendo que el Project Manager trabaja las 24 horas del día, incluyendo ver
-        // anime.
-        this.setAccumulatedSalary(this.getAccumulatedSalary() + this.getHourlyWage() * 24);
+        // Solo si trabaja 24 horas diarias y anime
+        this.setAccumulatedSalary(this.getAccumulatedSalary() + this.getHourlySalary()* 24);
     }
 
     @Override
     public String toString() {
-        // Retorna información relevante sobre el Project Manager
+        // Entrega info 
         return "Project Manager [Salario acumulado del project Manager=" + this.getAccumulatedSalary() + "]";
     }
 
     /**
      * @return the currentState
      */
-
+    //getter y setter de CurrentState
     public String getCurrentState() {
         return currentState;
     }
@@ -122,18 +121,20 @@ public class ProjectManager extends Thread{
     public void setCurrentState(String currentState) {
         this.currentState = currentState;
     }
-    /*
-   
-    public int getHourlyWage() {
-        return hourlyWage;
+    
+    //getter y setter de HourlySalary
+
+    public int getHourlySalary() {
+        return hourlySalary;
     }
 
    
-    public void setHourlyWage(int hourlyWage) {
-        this.hourlyWage = hourlyWage;
+    public void setHourlySalary(int hourlyWage) {
+        this.hourlySalary = hourlyWage;
     }
 
-  
+      //getter y setter de AccumulatedSalary
+
     public float getAccumulatedSalary() {
         return accumulatedSalary;
     }
@@ -143,17 +144,19 @@ public class ProjectManager extends Thread{
         this.accumulatedSalary = accumulatedSalary;
     }
 
-  
-    public App getApp() {
+      //getter y setter de App
+
+    public mainApp getApp() {
         return app;
     }
 
    
-    public void setApp(App app) {
+    public void setApp(mainApp app) {
         this.app = app;
     }
 
-  
+      //getter setter adder y reset de Strikes
+
     public int getStrikes() {
         return strikes;
     }
@@ -172,6 +175,6 @@ public class ProjectManager extends Thread{
     public void resetStrikes() {
         this.strikes = 0;
     }
-    */
+    
 }
     
