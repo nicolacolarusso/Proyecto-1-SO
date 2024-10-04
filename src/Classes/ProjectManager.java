@@ -118,11 +118,60 @@ public class ProjectManager extends Thread{
         return currentState;
     }
 
-    /**
-     * @param currentState the currentState to set
-     */
+  
     public void setCurrentState(String currentState) {
         this.currentState = currentState;
     }
+    /*
+   
+    public int getHourlyWage() {
+        return hourlyWage;
+    }
+
+   
+    public void setHourlyWage(int hourlyWage) {
+        this.hourlyWage = hourlyWage;
+    }
+
+  
+    public float getAccumulatedSalary() {
+        return accumulatedSalary;
+    }
+
+  
+    public void setAccumulatedSalary(float accumulatedSalary) {
+        this.accumulatedSalary = accumulatedSalary;
+    }
+
+  
+    public App getApp() {
+        return app;
+    }
+
+   
+    public void setApp(App app) {
+        this.app = app;
+    }
+
+  
+    public int getStrikes() {
+        return strikes;
+    }
+
+    
+ 
+    public void setStrikes(int strikes) {
+        this.strikes = strikes;
+    }
+
+ 
+    public void addStrike() {
+        this.strikes++;
+    }
+
+    public void resetStrikes() {
+        this.strikes = 0;
+    }
+    */
 }
     
