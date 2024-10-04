@@ -19,7 +19,7 @@ import Extra.ExtraFunctions;
 
 public class ProjectManager extends Thread{
     
-     
+
     private String currentState;
     private int strikes;
 /*
@@ -109,7 +109,7 @@ public class ProjectManager extends Thread{
         // Retorna información relevante sobre el Project Manager
         return "Project Manager [Salario acumulado del project Manager=" + this.getAccumulatedSalary() + "]";
     }
-*/
+
     /**
      * @return the currentState
      */
@@ -124,6 +124,5 @@ public class ProjectManager extends Thread{
     public void setCurrentState(String currentState) {
         this.currentState = currentState;
     }
-
 }
-
+    
