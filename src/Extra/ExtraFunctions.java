@@ -14,6 +14,7 @@ import proyecto1so.mainApp;
  */
 
 //Aquí están las funciones extra usadas en las clases
+//OJOOOO HAY QUE CAMBIAR EL DIRECTOR CON LO DE NICOLA
 public class ExtraFunctions {
     
     //funcion para traer la compania a la cual pertenece la instancia creada en app
@@ -22,28 +23,43 @@ public class ExtraFunctions {
     }
     
     
-    /* funcion para traerse los parametros del txt o json
+    //funcion para traerse los parametros del txt o json
     public static void cargarParametros(){
+        //traemos el archivo abierto en mainApp
+        String fileData = FileFunc.leerArchivo(mainApp.getSelectedFile());
+        // Se obtiene los datos del TXT
+        int[] params = FileFunc.traerParametrosGenerales(fileData);
+
+        if (params != null && params.length >= 2) {
+            //colocamos las duraciones de los dias
+            mainApp.setDayDuration(params[0]);
+            mainApp.setDeadline(params[1]);
+        }
+        //traemos la instancia creada en mainApp
+        mainApp app = mainApp.getInstance();
+        app.setApple(ExtraFunctions.crearCompaniaComputadora(0));
+        app.setHp(ExtraFunctions.crearCompaniaComputadora(1));
     }
-    */
     
     
     // ojo definimos - 0 para Apple y 1 para Hp
     //Se crean las instancias de las companias con los datos establecidos en Extra Data
-    /*public static ComputerCompany crearCompaniaComputadora(int company) {
-        String fileData = FileFunctions.read(mainApp.getSelectedFile());
+    public static ComputerCompany crearCompaniaComputadora(int company) {
+        String fileData = FileFunc.leerArchivo(mainApp.getSelectedFile());
 
         // Se obtiene los datos del TXT
-        int[] computerCompanyValues = FileFunctions.getCOmputerCompanyValues(company, fileData);
+        int[] computerCompanyValues = FileFunc.traerCompaniaComputadora(company, fileData);
 
         if (computerCompanyValues != null && computerCompanyValues.length >= 9) {
-
+            //nombre de la compania de computadora
             String name = ExtraData.companies[company];
             Worker[][] workers = new Worker[6][];
             Semaphore semaphore = new Semaphore(1);
+            //se establece la capacidad del almacen
             Storage storage = new Storage(25, 20, 55, 35, 10);
             int projectManager = 1;
             int director = 1;
+            //cantidad maxima de trabajadores
             int maxWorkers = computerCompanyValues[8];
 
             // Se crean los empleados de cada sección
@@ -59,7 +75,7 @@ public class ExtraFunctions {
                             storage, semaphore);
                 }
                 workers[type] = worker;
-            }
+            }     
             ComputerCompany compCompany = new ComputerCompany(name, maxWorkers, workers[0], workers[1], workers[2],
                     workers[3], workers[4],
                     workers[5], projectManager, director, storage, semaphore);
@@ -68,17 +84,16 @@ public class ExtraFunctions {
             ProjectManager projectManagerInstance = new ProjectManager(company, 1, 5, 1, 1,
                     ExtraData.hourlySalary[5], storage, semaphore);
             compCompany.setProjectManagerInstance(projectManagerInstance);
-            Director directorInstance = new Director(company, 1, 6, 2, 1, ExtraData.hourlySalary[6], storage,
+            /*Director directorInstance = new Director(company, 1, 6, 2, 1, ExtraData.hourlySalary[6], storage,
                     semaphore);
-            compCompany.setDirectorInstance(directorInstance);
+            compCompany.setDirectorInstance(directorInstance);*/
             return compCompany;
-
         }
         return null;
-    }*/
+    }
     
     
-    //funcion necesaria para crear un trabajador mas adelante
+    //funcion necesaria para crear un trabajador mas adelante. (trae el arreglo de trabajadores de una compania)
     private Worker[] traerArregloTrabajadoresPorTipo(ComputerCompany compCompany, int workerType) {
         switch (workerType) {
             case 0:

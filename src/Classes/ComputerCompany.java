@@ -391,6 +391,7 @@ public class ComputerCompany {
         this.graphicCardTrigger = graphicCardTrigger;
     }
 
+
     public ProjectManager getProjectManagerInstance() {
         return projectManagerInstance;
     }

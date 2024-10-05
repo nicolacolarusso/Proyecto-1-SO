@@ -6,17 +6,18 @@ package proyecto1so;
 
 import java.io.File;
 import Classes.ComputerCompany;
+import Extra.*;
 
 /**
  *
  * @author diego
  */
 public class mainApp {
-    /* FIle params VER CUAL VAMOS A USAR BIEN
+    //Parametros del archivo 
     private static String selectedPath = "test//params.txt";
     private static File selectedFile = new File(selectedPath);
-    private static FileFunctions fileFunctions = new FileFunctions();
-*/
+    private static FileFunc fileFunctions = new FileFunc();
+
     // Parametros del dia y variables
     private static int dayDuration;
     private static int deadline;
@@ -34,7 +35,7 @@ public class mainApp {
     }
 
     public void start() {
-        //ExtraFunctions.loadParams();
+        ExtraFunctions.cargarParametros();
         
         //Inicia la simulacion
         getApple().start();
@@ -47,7 +48,7 @@ public class mainApp {
     }
 
     //GETTERS Y SETTERS
-    /*
+   
     public static String getSelectedPath() {
         return selectedPath;
     }
@@ -65,16 +66,16 @@ public class mainApp {
         selectedFile = aSelectedFile;
     }
 
-    public static FileFunctions getFileFunctions() {
+    public static FileFunc getFileFun() {
         return fileFunctions;
     }
 
 
-    public static void setFileFunctions(FileFunctions aFileFunctions) {
+    public static void setFileFunc(FileFunc aFileFunctions) {
         fileFunctions = aFileFunctions;
     }
 
-    */
+    
     public static int getDayDuration() {
         return dayDuration;
     }
