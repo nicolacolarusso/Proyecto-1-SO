@@ -95,6 +95,18 @@ public class Storage {
         this.graphicCardsComputers = graphicCardsComputers;
     }
     
-    
+
+    public void increaseBasicComputers() {
+        this.basicComputers++;
+    }
+
+    public void increaseGraphicCardsComputers() {
+        this.graphicCardsComputers++;
+    }
+
+    public void resetComputers() {
+        this.getSaved()[5] = 0;
+    }
+
     
 }
