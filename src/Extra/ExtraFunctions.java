@@ -84,9 +84,9 @@ public class ExtraFunctions {
             ProjectManager projectManagerInstance = new ProjectManager(company, 1, 5, 1, 1,
                     ExtraData.hourlySalary[5], storage, semaphore);
             compCompany.setProjectManagerInstance(projectManagerInstance);
-            /*Director directorInstance = new Director(company, 1, 6, 2, 1, ExtraData.hourlySalary[6], storage,
+            Director directorInstance = new Director(company, 1, 6, 2, 1, ExtraData.hourlySalary[6], storage,
                     semaphore);
-            compCompany.setDirectorInstance(directorInstance);*/
+            compCompany.setDirectorInstance(directorInstance);
             return compCompany;
         }
         return null;
