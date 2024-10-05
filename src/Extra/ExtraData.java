@@ -26,7 +26,7 @@ public class ExtraData {
         "Productor de memoria RAM",
         "Productor de fuente de alimentacion",
         "Productor de tarjetas graficas",
-        "Ensamblador",
+        "Ensambladores",
         "Project Manager",
         "Director"
     };

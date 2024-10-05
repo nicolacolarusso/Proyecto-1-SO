@@ -26,7 +26,7 @@ public class ComputerCompany {
     private Worker[] prodTarjetaGrafica;
     private Worker[] Ensamblador;
     private int projectManager;
-    //private ProjectManager prostoragejectManagerInstance;
+    private ProjectManager projectManagerInstance;
     private int director;
     private Director directorInstance;
     private static Storage storage;
@@ -389,5 +389,13 @@ public class ComputerCompany {
 
     public void setGraphicCardTrigger(int graphicCardTrigger) {
         this.graphicCardTrigger = graphicCardTrigger;
+    }
+    
+    public ProjectManager getProjectManagerInstance() {
+        return projectManagerInstance;
+    }
+
+    public void setProjectManagerInstance(ProjectManager projectManagerInstance) {
+        this.projectManagerInstance = projectManagerInstance;
     }
 }
