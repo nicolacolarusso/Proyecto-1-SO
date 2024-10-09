@@ -40,22 +40,6 @@ public class HpSimulador extends javax.swing.JFrame {
         driveTitle25 = new javax.swing.JLabel();
         totalChapters = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        diasPanel = new javax.swing.JPanel();
-        driveTitle6 = new javax.swing.JLabel();
-        driveTitle8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        diasEntregaTitle = new javax.swing.JLabel();
-        currentDeadline = new javax.swing.JTextField();
-        diasTitle = new javax.swing.JLabel();
-        totalDays = new javax.swing.JTextField();
-        driveTitle9 = new javax.swing.JLabel();
-        tGraficaCompTotal = new javax.swing.JTextField();
-        basicCompTotal = new javax.swing.JTextField();
-        driveTitle10 = new javax.swing.JLabel();
-        driveTitle27 = new javax.swing.JLabel();
-        totalComp = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         hpLabel = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
@@ -99,6 +83,18 @@ public class HpSimulador extends javax.swing.JFrame {
         configTrabajTitle = new javax.swing.JLabel();
         maxConfTrabLabel = new javax.swing.JLabel();
         maxCap = new javax.swing.JLabel();
+        diasPanel = new javax.swing.JPanel();
+        diasEntregaTitle = new javax.swing.JLabel();
+        currentDeadline = new javax.swing.JTextField();
+        diasTitle = new javax.swing.JLabel();
+        totalDays = new javax.swing.JTextField();
+        diasPanel2 = new javax.swing.JPanel();
+        driveTitle9 = new javax.swing.JLabel();
+        tGraficaCompTotal = new javax.swing.JTextField();
+        basicCompTotal = new javax.swing.JTextField();
+        driveTitle10 = new javax.swing.JLabel();
+        driveTitle27 = new javax.swing.JLabel();
+        totalComp = new javax.swing.JTextField();
         storagePanel = new javax.swing.JPanel();
         storageTitle = new javax.swing.JLabel();
         storageTitle2 = new javax.swing.JLabel();
@@ -208,224 +204,11 @@ public class HpSimulador extends javax.swing.JFrame {
         totalChapters.setFocusable(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(1260, 810));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(255, 204, 0));
-        jPanel3.setForeground(new java.awt.Color(255, 204, 0));
-
-        diasPanel.setBackground(new java.awt.Color(255, 204, 0));
-        diasPanel.setForeground(new java.awt.Color(51, 51, 51));
-
-        driveTitle6.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle6.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle6.setText("Días Restantes:");
-
-        driveTitle8.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle8.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle8.setText("Días transcurridos:");
-
-        jTextField7.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField7.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField7.setText("0");
-        jTextField7.setEnabled(false);
-
-        jTextField8.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField8.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(51, 51, 51));
-        jTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField8.setText("0");
-        jTextField8.setEnabled(false);
-
-        diasEntregaTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        diasEntregaTitle.setText("Días para la entrega:");
-        diasEntregaTitle.setFocusable(false);
-
-        currentDeadline.setEditable(false);
-        currentDeadline.setBackground(new java.awt.Color(255, 204, 51));
-        currentDeadline.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        currentDeadline.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        currentDeadline.setText("0");
-        currentDeadline.setBorder(null);
-        currentDeadline.setFocusable(false);
-        currentDeadline.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                currentDeadlineActionPerformed(evt);
-            }
-        });
-
-        diasTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        diasTitle.setText("Días:");
-        diasTitle.setFocusable(false);
-
-        totalDays.setEditable(false);
-        totalDays.setBackground(new java.awt.Color(255, 204, 0));
-        totalDays.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        totalDays.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        totalDays.setText("0");
-        totalDays.setBorder(null);
-        totalDays.setFocusable(false);
-        totalDays.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalDaysActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout diasPanelLayout = new javax.swing.GroupLayout(diasPanel);
-        diasPanel.setLayout(diasPanelLayout);
-        diasPanelLayout.setHorizontalGroup(
-            diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diasPanelLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(diasPanelLayout.createSequentialGroup()
-                        .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(diasPanelLayout.createSequentialGroup()
-                                .addComponent(diasTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(diasPanelLayout.createSequentialGroup()
-                                .addComponent(diasEntregaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(diasPanelLayout.createSequentialGroup()
-                        .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(driveTitle8)
-                            .addComponent(driveTitle6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19))))
-        );
-        diasPanelLayout.setVerticalGroup(
-            diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diasPanelLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(diasTitle)
-                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(diasEntregaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(144, 144, 144)
-                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle8)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(driveTitle6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        driveTitle9.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle9.setText("Capítulos plotTwist:");
-        driveTitle9.setFocusable(false);
-
-        tGraficaCompTotal.setEditable(false);
-        tGraficaCompTotal.setBackground(new java.awt.Color(255, 204, 0));
-        tGraficaCompTotal.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        tGraficaCompTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        tGraficaCompTotal.setText("0");
-        tGraficaCompTotal.setBorder(null);
-        tGraficaCompTotal.setFocusable(false);
-        tGraficaCompTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tGraficaCompTotalActionPerformed(evt);
-            }
-        });
-
-        basicCompTotal.setEditable(false);
-        basicCompTotal.setBackground(new java.awt.Color(255, 204, 0));
-        basicCompTotal.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        basicCompTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        basicCompTotal.setText("0");
-        basicCompTotal.setBorder(null);
-        basicCompTotal.setFocusable(false);
-        basicCompTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                basicCompTotalActionPerformed(evt);
-            }
-        });
-
-        driveTitle10.setBackground(new java.awt.Color(255, 204, 0));
-        driveTitle10.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle10.setText("Capítulos normales:");
-        driveTitle10.setFocusable(false);
-
-        driveTitle27.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle27.setText("Capítulos (total):");
-        driveTitle27.setFocusable(false);
-
-        totalComp.setEditable(false);
-        totalComp.setBackground(new java.awt.Color(255, 204, 0));
-        totalComp.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        totalComp.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        totalComp.setText("0");
-        totalComp.setBorder(null);
-        totalComp.setFocusable(false);
-        totalComp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                totalCompActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(diasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(668, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(370, 370, 370)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(driveTitle9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(driveTitle10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(basicCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tGraficaCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(driveTitle27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(370, 370, 370)))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(diasPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(15, 15, 15)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(driveTitle27))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(basicCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(driveTitle10))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(driveTitle9)
-                        .addComponent(tGraficaCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(15, 15, 15)))
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 950, 100));
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 0));
 
@@ -449,7 +232,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 160, 50));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 160, 50));
 
         titulo.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -466,7 +249,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 InicioBotonActionPerformed(evt);
             }
         });
-        jPanel1.add(InicioBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 160, 50));
+        jPanel1.add(InicioBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 160, 50));
 
         AppleBoton.setBackground(new java.awt.Color(102, 102, 102));
         AppleBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -478,7 +261,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 AppleBotonActionPerformed(evt);
             }
         });
-        jPanel1.add(AppleBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 160, 50));
+        jPanel1.add(AppleBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 160, 50));
 
         ConfiguracionBoton.setBackground(new java.awt.Color(102, 102, 102));
         ConfiguracionBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -490,7 +273,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 ConfiguracionBotonActionPerformed(evt);
             }
         });
-        jPanel1.add(ConfiguracionBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 160, 50));
+        jPanel1.add(ConfiguracionBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 160, 50));
 
         DashboardBoton.setBackground(new java.awt.Color(102, 102, 102));
         DashboardBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -502,7 +285,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 DashboardBotonActionPerformed(evt);
             }
         });
-        jPanel1.add(DashboardBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 160, 50));
+        jPanel1.add(DashboardBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 160, 50));
 
         GuardarBoton.setBackground(new java.awt.Color(102, 102, 102));
         GuardarBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -514,7 +297,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 GuardarBotonActionPerformed(evt);
             }
         });
-        jPanel1.add(GuardarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 160, 50));
+        jPanel1.add(GuardarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 160, 50));
 
         workersConfigurations.setBackground(new java.awt.Color(0, 51, 153));
 
@@ -1045,6 +828,172 @@ public class HpSimulador extends javax.swing.JFrame {
         );
 
         jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, 350, 490));
+
+        diasPanel.setBackground(new java.awt.Color(255, 204, 0));
+        diasPanel.setForeground(new java.awt.Color(51, 51, 51));
+
+        diasEntregaTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        diasEntregaTitle.setText("Días para la entrega:");
+        diasEntregaTitle.setFocusable(false);
+
+        currentDeadline.setEditable(false);
+        currentDeadline.setBackground(new java.awt.Color(255, 204, 51));
+        currentDeadline.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        currentDeadline.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        currentDeadline.setText("0");
+        currentDeadline.setBorder(null);
+        currentDeadline.setFocusable(false);
+        currentDeadline.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                currentDeadlineActionPerformed(evt);
+            }
+        });
+
+        diasTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        diasTitle.setText("Días:");
+        diasTitle.setFocusable(false);
+
+        totalDays.setEditable(false);
+        totalDays.setBackground(new java.awt.Color(255, 204, 0));
+        totalDays.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        totalDays.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        totalDays.setText("0");
+        totalDays.setBorder(null);
+        totalDays.setFocusable(false);
+        totalDays.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalDaysActionPerformed(evt);
+            }
+        });
+
+        diasPanel2.setBackground(new java.awt.Color(255, 204, 0));
+        diasPanel2.setForeground(new java.awt.Color(255, 204, 0));
+
+        driveTitle9.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle9.setText("Capítulos plotTwist:");
+        driveTitle9.setFocusable(false);
+
+        tGraficaCompTotal.setEditable(false);
+        tGraficaCompTotal.setBackground(new java.awt.Color(255, 204, 0));
+        tGraficaCompTotal.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        tGraficaCompTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        tGraficaCompTotal.setText("0");
+        tGraficaCompTotal.setBorder(null);
+        tGraficaCompTotal.setFocusable(false);
+        tGraficaCompTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tGraficaCompTotalActionPerformed(evt);
+            }
+        });
+
+        basicCompTotal.setEditable(false);
+        basicCompTotal.setBackground(new java.awt.Color(255, 204, 0));
+        basicCompTotal.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        basicCompTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        basicCompTotal.setText("0");
+        basicCompTotal.setBorder(null);
+        basicCompTotal.setFocusable(false);
+        basicCompTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                basicCompTotalActionPerformed(evt);
+            }
+        });
+
+        driveTitle10.setBackground(new java.awt.Color(255, 204, 0));
+        driveTitle10.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle10.setText("Capítulos normales:");
+        driveTitle10.setFocusable(false);
+
+        driveTitle27.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle27.setText("Capítulos (total):");
+        driveTitle27.setFocusable(false);
+
+        totalComp.setEditable(false);
+        totalComp.setBackground(new java.awt.Color(255, 204, 0));
+        totalComp.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        totalComp.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        totalComp.setText("0");
+        totalComp.setBorder(null);
+        totalComp.setFocusable(false);
+        totalComp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalCompActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout diasPanel2Layout = new javax.swing.GroupLayout(diasPanel2);
+        diasPanel2.setLayout(diasPanel2Layout);
+        diasPanel2Layout.setHorizontalGroup(
+            diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(diasPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(diasPanel2Layout.createSequentialGroup()
+                        .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(driveTitle9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(driveTitle10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(basicCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tGraficaCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(diasPanel2Layout.createSequentialGroup()
+                        .addComponent(driveTitle27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(370, 370, 370))
+        );
+        diasPanel2Layout.setVerticalGroup(
+            diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(diasPanel2Layout.createSequentialGroup()
+                .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(basicCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(driveTitle10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(driveTitle9)
+                    .addComponent(tGraficaCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+        );
+
+        javax.swing.GroupLayout diasPanelLayout = new javax.swing.GroupLayout(diasPanel);
+        diasPanel.setLayout(diasPanelLayout);
+        diasPanelLayout.setHorizontalGroup(
+            diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(diasPanelLayout.createSequentialGroup()
+                .addGap(270, 270, 270)
+                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(diasTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(diasEntregaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(diasPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                .addGap(82, 82, 82)
+                .addComponent(diasPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177))
+        );
+        diasPanelLayout.setVerticalGroup(
+            diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(diasPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(diasTitle)
+                    .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(diasEntregaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(diasPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(diasPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 950, 100));
 
         storagePanel.setBackground(new java.awt.Color(0, 153, 255));
 
@@ -1885,7 +1834,7 @@ public class HpSimulador extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hpLogo.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 690));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 810));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -2205,6 +2154,7 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JButton decreaseRAM;
     private javax.swing.JLabel diasEntregaTitle;
     private javax.swing.JPanel diasPanel;
+    private javax.swing.JPanel diasPanel2;
     private javax.swing.JLabel diasTitle;
     private javax.swing.JPanel director;
     private javax.swing.JTextField directorStatus;
@@ -2224,9 +2174,7 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JLabel driveTitle28;
     private javax.swing.JLabel driveTitle4;
     private javax.swing.JLabel driveTitle5;
-    private javax.swing.JLabel driveTitle6;
     private javax.swing.JLabel driveTitle7;
-    private javax.swing.JLabel driveTitle8;
     private javax.swing.JLabel driveTitle9;
     private javax.swing.JTextField earning;
     private javax.swing.JLabel earningTitle;
@@ -2248,9 +2196,6 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JPanel loteActual;
     private javax.swing.JLabel maxCap;
     private javax.swing.JLabel maxConfTrabLabel;

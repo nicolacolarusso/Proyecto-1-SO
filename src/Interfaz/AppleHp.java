@@ -18,7 +18,6 @@ public class AppleHp extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-        this.setSize(1131, 835);
     }
 
     /**
@@ -44,6 +43,9 @@ public class AppleHp extends javax.swing.JFrame {
         fotoHp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(937, 688));
+        setMinimumSize(new java.awt.Dimension(937, 688));
+        setPreferredSize(new java.awt.Dimension(937, 688));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -56,14 +58,14 @@ public class AppleHp extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGap(0, 550, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 570, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 510, 570));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 550, 570));
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 0));
 
@@ -156,13 +158,13 @@ public class AppleHp extends javax.swing.JFrame {
 
         fotoApple.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoCompApple.png"))); // NOI18N
         fotoApple.setText("jLabel1");
-        jPanel1.add(fotoApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, -1, -1));
+        jPanel1.add(fotoApple, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 140, -1, -1));
 
         fotoHp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fotoCompHp.png"))); // NOI18N
         fotoHp.setText("jLabel1");
-        jPanel1.add(fotoHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, -1, -1));
+        jPanel1.add(fotoHp, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 400, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 690));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
