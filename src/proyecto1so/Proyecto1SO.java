@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package proyecto1so;
-
+import proyecto1so.mainApp;
 /**
  *
  * @author nicolagabrielecolarusso

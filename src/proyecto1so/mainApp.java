@@ -4,9 +4,12 @@
  */
 package proyecto1so;
 
+import Interfaz.HpSimulador;
 import java.io.File;
 import Classes.ComputerCompany;
 import Extra.*;
+import Interfaz.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,16 +38,13 @@ public class mainApp {
     }
 
     public void start() {
-        ExtraFunctions.cargarParametros();
-        
+        /*ExtraFunctions.cargarParametros();
         //Inicia la simulacion
         getApple().start();
         getHp().start();
-        //chartManager = new ChartManager();
-        
-
-        /*Home home = new Home();
-        home.setVisible(true);*/
+        //chartManager = new ChartManager();]*/
+        AppleHp apple = new AppleHp();
+        apple.setVisible(true);
     }
 
     //GETTERS Y SETTERS
