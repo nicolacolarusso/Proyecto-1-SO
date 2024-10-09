@@ -419,7 +419,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="placaBaseTitle" max="32767" attributes="0"/>
+                          <Component id="placaBaseTitle" pref="176" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="decreasePlacaB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1180,7 +1180,7 @@
                       </Group>
                       <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="diasPanel2" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="diasPanel2" alignment="0" pref="100" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>

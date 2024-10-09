@@ -4,15 +4,275 @@
  */
 package Interfaz;
 
+import Classes.Worker;
+import Extra.ExtraFunctions;
+import Extra.FileFunc;
+import java.awt.Point;
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.JButton;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import proyecto1so.mainApp;
+
 /**
  *
  * @author diego
  */
 public class HpSimulador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Home
-     */
+    private Point initialClick;
+    private final mainApp app = mainApp.getInstance();
+    private int maxEmployees;
+    private int actualEmployees;
+    private static HpSimulador hp;
+    private ExtraFunctions helper = new ExtraFunctions();
+    private FileFunc filefunctions = new FileFunc();
+    private File selectedFile = app.getSelectedFile();
+    private JButton[] decreaseBtn = new JButton[6];
+    private JButton[] increaseBtn = new JButton[6];
+    private int[] values = {
+        countNonNullEmployees(this.app.getHp().getProdPlacaBase()),
+        countNonNullEmployees(this.app.getHp().getProdCPUs()),
+        countNonNullEmployees(this.app.getHp().getProdMemoriaRAM()),
+        countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion()),
+        countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica()),
+        countNonNullEmployees(this.app.getHp().getEnsamblador())
+    };
+
+    private void updateBtnStatus() {
+        updateValues();
+
+        if (this.actualEmployees == this.maxEmployees) {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(false);
+                btn.setFocusable(false);
+            }
+        } else {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(true);
+                btn.setFocusable(true);
+            }
+        }
+
+        for (int i = 0; i < this.values.length; i++) {
+            if (this.values[i] == 1) {
+                this.decreaseBtn[i].setEnabled(false);
+                this.decreaseBtn[i].setFocusable(false);
+            } else {
+                this.decreaseBtn[i].setEnabled(true);
+                this.decreaseBtn[i].setFocusable(true);
+
+            }
+        }
+    }
+
+    private void updateValues() {
+        values[0] = countNonNullEmployees(this.app.getHp().getProdPlacaBase());
+        values[1] = countNonNullEmployees(this.app.getHp().getProdCPUs());
+        values[2] = countNonNullEmployees(this.app.getHp().getProdMemoriaRAM());
+        values[3] = countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion());
+        values[4] = countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica());
+        values[5] = countNonNullEmployees(this.app.getHp().getEnsamblador());
+    }
+
+    public static synchronized HpSimulador getInstance() {
+        if (hp == null) {
+            hp = new HpSimulador();
+        }
+        return hp;
+    }
+
+    public HpSimulador() {
+        try {
+            // Código para el Look and Feel
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+            /* hasta              aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii llevoooooooooo 
+
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        initializeValues();
+             hasta              aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii llevoooooooooo */
+
+        
+        initComponents();
+        this.apple = apple;
+        apple.setVisible(false);
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.setSize(1131, 835);
+        
+
+        this.decreaseBtn[0] = decreasePlacaB;
+        this.decreaseBtn[1] = decreaseCpu;
+        this.decreaseBtn[2] = decreaseRAM;
+        this.decreaseBtn[3] = decreaseFAliment;
+        this.decreaseBtn[4] = decreaceTGrafica;
+        this.decreaseBtn[5] = decreaceAssembler;
+        this.increaseBtn[0] = increasePlacaB;
+        this.increaseBtn[1] = increaseCpu;
+        this.increaseBtn[2] = increaseRAM;
+        this.increaseBtn[3] = increaseFAliment;
+        this.increaseBtn[4] = increaseTGrafica;
+        this.increaseBtn[5] = increaseAssembler;
+
+        updateBtnStatus();
+        this.start();
+
+    }
+
+    //
+    private void start() {
+        // Crear un nuevo hilo para el bucle infinito
+        Thread updateThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        // Ejecutar las actualizaciones de la UI en el EDT
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Aquí van tus actualizaciones de la UI
+                                placaBValueStorage
+                                        .setText(String.valueOf(app.getHp().getStorage().getSaved()[0]));
+                                cpuValueStorage
+                                        .setText(String.valueOf(app.getHp().getStorage().getSaved()[1]));
+                                RAMValueStorage
+                                        .setText(String.valueOf(app.getHp().getStorage().getSaved()[2]));
+                                fAlimentValueStorage
+                                        .setText(String.valueOf(app.getHp().getStorage().getSaved()[3]));
+                                tGraficaValueStorage
+                                        .setText(String.valueOf(app.getHp().getStorage().getSaved()[4]));
+                                assemblerValueStorage
+                                        .setText(String.valueOf(app.getHp().getStorage().getSaved()[5]));
+
+                                projectManagerStatus
+                                        .setText(app.getHp().getProjectManagerInstance().getCurrentState());
+
+                                currentDeadline.setText(
+                                        String.valueOf(app.getHp().getRemainingDays()));
+
+                                totalDays.setText(String.valueOf(app.getHp().getTotalDays()));
+
+                                strikeCounter.setText(String
+                                        .valueOf(app.getHp().getProjectManagerInstance().getStrikes()));
+                                cashPenality.setText(String.valueOf(Integer.parseInt(strikeCounter.getText()) * 100));
+                                directorStatus.setText(app.getHp().getDirectorInstance().getEstado());
+
+                                
+                                
+                                
+                                
+                                totalComp.setText(
+                                        String.valueOf(app.getHp().getNumComputers()));
+                                basicCompTotal.setText(
+                                        String.valueOf(app.getHp().getNumBasicComputers()));
+
+                                tGraficaCompTotal.setText(
+                                        String.valueOf(app.getHp().getNumGraphicCardsComputers()));
+
+                                basicComp.setText(
+                                        String.valueOf(app.getHp().getActualNumBasicComputers())
+                                );
+                                tGraficaComp.setText(
+                                        String.valueOf(app.getHp().getActualNumGraphicCardsComputers())
+                                );
+
+                                basicCompLast.setText(
+                                        String.valueOf(app.getHp().getLastNumBasicComputers())
+                                );
+                                tGraficaCompLast.setText(
+                                        String.valueOf(app.getHp().getLastNumGraphicCardsComputers())
+                                );
+
+                                profit.setText(formatNumberAsK((int) app.getHp().getEarning() -  (int) app.getHp().getTotalCost()));
+                                cost.setText(formatNumberAsK((int) app.getHp().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getHp().getEarning()));
+                                batchLastProfit.setText(
+                                        formatNumberAsK((int) app.getHp().getBatchLastProfit()));
+                            }
+                        });
+
+                        // Pausar el hilo separado, no el EDT
+                        Thread.sleep(app.getDayDuration() / 48);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Iniciar el hilo
+        updateThread.start();
+    }
+
+    private void initializeValues() {
+        if (this.app.getHp() != null) {
+            this.maxEmployees = this.app.getHp().getMaxWorkersQuantity();
+            this.actualEmployees = this.app.getHp().getActualWorkersQuantity();
+            this.placaBValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdPlacaBase())));
+            this.cpuValue
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdCPUs())));
+            this.RAMValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getHp().getProdMemoriaRAM())));
+            this.FAlimentValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion())));
+            this.TGraficaValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica())));
+            this.assemblerValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getEnsamblador())));
+            this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
+        }
+    }
+
+    private int countNonNullEmployees(Worker[] workers) {
+        int count = 0;
+        for (Worker workeer : workers) {
+            if (workeer != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public String formatNumberAsK(int number) {
+        // Se onverte el número a miles
+        double thousands = number / 1000.0;
+
+        // Se redondea a dos dígitos significativos
+        double rounded = Math.round(thousands * 100.0) / 100.0;
+
+        // Se convierte a cadena y se añade 'K'
+        return rounded + "K";
+    }
+
+
+    
+    /* hasta              aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii llevoooooooooo */
+    
+    
+    
+    
+    
     public static AppleHp apple;
     
     public HpSimulador(AppleHp apple) {
