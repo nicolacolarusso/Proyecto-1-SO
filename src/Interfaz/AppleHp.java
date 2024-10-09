@@ -12,7 +12,10 @@ public class AppleHp extends javax.swing.JFrame {
      * Creates new form Apple
      */
     
-    public static HpSimulador home;
+    public static HpSimulador hp;
+    public static AppleSimulador apple;
+    public static Configurador configurador;
+    public static Metricas dashboard;
             
     public AppleHp() {
         initComponents();
@@ -43,9 +46,7 @@ public class AppleHp extends javax.swing.JFrame {
         fotoHp = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(937, 688));
         setMinimumSize(new java.awt.Dimension(937, 688));
-        setPreferredSize(new java.awt.Dimension(937, 688));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
@@ -91,10 +92,10 @@ public class AppleHp extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 160, 50));
 
-        titulo.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
+        titulo.setFont(new java.awt.Font("Arial Black", 1, 60)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setText("TechNexus");
-        jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+        jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         HpBoton.setBackground(new java.awt.Color(102, 102, 102));
         HpBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -170,19 +171,19 @@ public class AppleHp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void HpBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HpBotonActionPerformed
-        HpSimulador home = new HpSimulador(this);
+        HpSimulador hp = new HpSimulador(this);
     }//GEN-LAST:event_HpBotonActionPerformed
 
     private void AppleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleBotonActionPerformed
-        // TODO add your handling code here:
+        AppleSimulador apple = new AppleSimulador(this);
     }//GEN-LAST:event_AppleBotonActionPerformed
 
     private void ConfiguracionBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguracionBotonActionPerformed
-        // TODO add your handling code here:
+        Configurador configurador= new Configurador(this);
     }//GEN-LAST:event_ConfiguracionBotonActionPerformed
 
     private void DashboardBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardBotonActionPerformed
-        // TODO add your handling code here:
+        Metricas dashboard = new Metricas(this);
     }//GEN-LAST:event_DashboardBotonActionPerformed
 
     private void GuardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBotonActionPerformed

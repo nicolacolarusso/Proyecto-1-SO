@@ -4,18 +4,18 @@
  */
 package Interfaz;
 
+import static Interfaz.HpSimulador.apple;
+
 /**
  *
  * @author diego
  */
-public class HpSimulador extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Home
-     */
+public class AppleSimulador extends javax.swing.JFrame {
     public static AppleHp apple;
-    
-    public HpSimulador(AppleHp apple) {
+    /**
+     * Creates new form AppleSimulador
+     */
+    public AppleSimulador(AppleHp apple) {
         initComponents();
         this.apple = apple;
         apple.setVisible(false);
@@ -32,12 +32,6 @@ public class HpSimulador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        driveTitle4 = new javax.swing.JLabel();
-        plotTwistChapters = new javax.swing.JTextField();
-        standardChapters = new javax.swing.JTextField();
-        driveTitle5 = new javax.swing.JLabel();
-        driveTitle25 = new javax.swing.JLabel();
-        totalChapters = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         hpLabel = new javax.swing.JLabel();
@@ -155,64 +149,18 @@ public class HpSimulador extends javax.swing.JFrame {
         driveTitle22 = new javax.swing.JLabel();
         driveTitle28 = new javax.swing.JLabel();
         batchLastProfit = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         slogan = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-
-        driveTitle4.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle4.setText("Capítulos plotTwist:");
-        driveTitle4.setFocusable(false);
-
-        plotTwistChapters.setEditable(false);
-        plotTwistChapters.setBackground(new java.awt.Color(34, 46, 60));
-        plotTwistChapters.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        plotTwistChapters.setForeground(new java.awt.Color(255, 255, 255));
-        plotTwistChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        plotTwistChapters.setText("0");
-        plotTwistChapters.setBorder(null);
-        plotTwistChapters.setFocusable(false);
-
-        standardChapters.setEditable(false);
-        standardChapters.setBackground(new java.awt.Color(34, 46, 60));
-        standardChapters.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        standardChapters.setForeground(new java.awt.Color(255, 255, 255));
-        standardChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        standardChapters.setText("0");
-        standardChapters.setBorder(null);
-        standardChapters.setFocusable(false);
-
-        driveTitle5.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle5.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle5.setText("Capítulos normales:");
-        driveTitle5.setFocusable(false);
-
-        driveTitle25.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        driveTitle25.setForeground(new java.awt.Color(204, 204, 204));
-        driveTitle25.setText("Capítulos (total):");
-        driveTitle25.setFocusable(false);
-
-        totalChapters.setEditable(false);
-        totalChapters.setBackground(new java.awt.Color(34, 46, 60));
-        totalChapters.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        totalChapters.setForeground(new java.awt.Color(255, 255, 255));
-        totalChapters.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        totalChapters.setText("0");
-        totalChapters.setBorder(null);
-        totalChapters.setFocusable(false);
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1209, 808));
-        setMinimumSize(new java.awt.Dimension(1209, 808));
-        setPreferredSize(new java.awt.Dimension(1209, 808));
-        setSize(new java.awt.Dimension(1209, 808));
+        setMaximumSize(new java.awt.Dimension(1170, 830));
+        setMinimumSize(new java.awt.Dimension(1170, 830));
+        setSize(new java.awt.Dimension(1170, 830));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1176, 811));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1176, 811));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1176, 811));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 204, 0));
@@ -241,8 +189,8 @@ public class HpSimulador extends javax.swing.JFrame {
 
         titulo.setFont(new java.awt.Font("Arial Black", 1, 60)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
-        titulo.setText("Hewlette Packard");
-        jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, -1));
+        titulo.setText("Apple");
+        jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, -1));
 
         InicioBoton.setBackground(new java.awt.Color(102, 102, 102));
         InicioBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
@@ -304,10 +252,9 @@ public class HpSimulador extends javax.swing.JFrame {
         });
         jPanel1.add(GuardarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 160, 50));
 
-        workersConfigurations.setBackground(new java.awt.Color(0, 51, 153));
+        workersConfigurations.setBackground(new java.awt.Color(255, 255, 255));
 
         configTrabajTitle2.setFont(new java.awt.Font("Arial Black", 1, 19)); // NOI18N
-        configTrabajTitle2.setForeground(new java.awt.Color(255, 255, 255));
         configTrabajTitle2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         configTrabajTitle2.setText("TRABAJADORES");
 
@@ -772,17 +719,14 @@ public class HpSimulador extends javax.swing.JFrame {
         );
 
         configTrabajTitle.setFont(new java.awt.Font("Arial Black", 1, 19)); // NOI18N
-        configTrabajTitle.setForeground(new java.awt.Color(255, 255, 255));
         configTrabajTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         configTrabajTitle.setText("CONFIGURACIÓN");
 
         maxConfTrabLabel.setFont(new java.awt.Font("Arial Black", 1, 19)); // NOI18N
-        maxConfTrabLabel.setForeground(new java.awt.Color(255, 255, 255));
         maxConfTrabLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         maxConfTrabLabel.setText("Máximo:");
 
         maxCap.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        maxCap.setForeground(new java.awt.Color(51, 51, 51));
         maxCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout workersConfigurationsLayout = new javax.swing.GroupLayout(workersConfigurations);
@@ -934,23 +878,23 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diasPanel2Layout.createSequentialGroup()
-                        .addComponent(driveTitle27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(52, 52, 52)
-                        .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(diasPanel2Layout.createSequentialGroup()
                         .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(driveTitle10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(driveTitle9, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(driveTitle9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(driveTitle10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(basicCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tGraficaCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(330, 330, 330))
+                            .addComponent(tGraficaCompTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(diasPanel2Layout.createSequentialGroup()
+                        .addComponent(driveTitle27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(370, 370, 370))
         );
         diasPanel2Layout.setVerticalGroup(
             diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diasPanel2Layout.createSequentialGroup()
-                .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(diasPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(driveTitle27, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(totalComp, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -979,9 +923,9 @@ public class HpSimulador extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(currentDeadline, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(totalDays, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                .addGap(48, 48, 48)
-                .addComponent(diasPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(178, 178, 178))
+                .addGap(39, 39, 39)
+                .addComponent(diasPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(177, 177, 177))
         );
         diasPanelLayout.setVerticalGroup(
             diasPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -998,9 +942,9 @@ public class HpSimulador extends javax.swing.JFrame {
             .addComponent(diasPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, Short.MAX_VALUE)
         );
 
-        jPanel1.add(diasPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 950, 100));
+        jPanel1.add(diasPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 990, 100));
 
-        storagePanel.setBackground(new java.awt.Color(0, 153, 255));
+        storagePanel.setBackground(new java.awt.Color(0, 0, 0));
 
         storageTitle.setFont(new java.awt.Font("Arial Black", 1, 19)); // NOI18N
         storageTitle.setForeground(new java.awt.Color(255, 255, 255));
@@ -1146,19 +1090,19 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(memoriaRAMTitle1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(RAMValueStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RAMValueStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(RAMLimit1)
-                .addGap(14, 14, 14))
+                .addGap(315, 315, 315))
         );
         RAMStorageLayout.setVerticalGroup(
             RAMStorageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RAMStorageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(RAMStorageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RAMValueStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                    .addComponent(memoriaRAMTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RAMLimit1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(RAMStorageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(memoriaRAMTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(RAMValueStorage)
+                    .addComponent(RAMLimit1))
                 .addContainerGap())
         );
 
@@ -1195,7 +1139,7 @@ public class HpSimulador extends javax.swing.JFrame {
             .addGroup(fAlimentStorageLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(fAlimentTitle1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(fAlimentValueStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fAlimentLimit1)
@@ -1300,7 +1244,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addComponent(assemblerValueStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(assemblerLimit3)
-                .addGap(14, 14, 14))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         assemblerStorageLayout.setVerticalGroup(
             assemblerStorageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1319,23 +1263,21 @@ public class HpSimulador extends javax.swing.JFrame {
             storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(storagePanelLayout.createSequentialGroup()
                 .addGroup(storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(storageTitle2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(storagePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(storageTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(storagePanelLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
                         .addGroup(storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(storagePanelLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(fAlimentStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                                    .addComponent(RAMStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                                    .addComponent(cpuStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                                    .addComponent(placaBStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                                    .addComponent(tGraficaStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                                    .addComponent(assemblerStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)))
-                            .addGroup(storagePanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(storageTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 16, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(storageTitle2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(assemblerStorage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                .addComponent(tGraficaStorage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                .addComponent(fAlimentStorage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                .addComponent(RAMStorage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 251, Short.MAX_VALUE)
+                                .addComponent(cpuStorage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+                                .addComponent(placaBStorage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         storagePanelLayout.setVerticalGroup(
             storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1361,34 +1303,28 @@ public class HpSimulador extends javax.swing.JFrame {
 
         jPanel1.add(storagePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 280, 490));
 
-        costosGanancias.setBackground(new java.awt.Color(0, 51, 153));
+        costosGanancias.setBackground(new java.awt.Color(255, 255, 255));
         costosGanancias.setForeground(new java.awt.Color(51, 51, 51));
         costosGanancias.setEnabled(false);
 
         earningTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        earningTitle.setForeground(new java.awt.Color(204, 204, 204));
         earningTitle.setText("Ganancia bruta:");
         earningTitle.setFocusable(false);
 
         costTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        costTitle.setForeground(new java.awt.Color(204, 204, 204));
         costTitle.setText("Costos operativos:");
         costTitle.setFocusable(false);
 
         driveTitle11.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
-        driveTitle11.setForeground(new java.awt.Color(204, 204, 204));
         driveTitle11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle11.setText("COSTOS/ GANANCIAS");
         driveTitle11.setFocusable(false);
 
         profitTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        profitTitle.setForeground(new java.awt.Color(204, 204, 204));
         profitTitle.setText("Ganancia neta:");
         profitTitle.setFocusable(false);
 
-        cost.setBackground(new java.awt.Color(0, 51, 153));
         cost.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        cost.setForeground(new java.awt.Color(255, 255, 255));
         cost.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cost.setText("0");
         cost.setBorder(null);
@@ -1399,9 +1335,7 @@ public class HpSimulador extends javax.swing.JFrame {
             }
         });
 
-        earning.setBackground(new java.awt.Color(0, 51, 153));
         earning.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        earning.setForeground(new java.awt.Color(255, 255, 255));
         earning.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         earning.setText("0");
         earning.setBorder(null);
@@ -1412,9 +1346,7 @@ public class HpSimulador extends javax.swing.JFrame {
             }
         });
 
-        profit.setBackground(new java.awt.Color(0, 51, 153));
         profit.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        profit.setForeground(new java.awt.Color(255, 255, 255));
         profit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         profit.setText("0");
         profit.setBorder(null);
@@ -1429,30 +1361,34 @@ public class HpSimulador extends javax.swing.JFrame {
         costosGanancias.setLayout(costosGananciasLayout);
         costosGananciasLayout.setHorizontalGroup(
             costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, costosGananciasLayout.createSequentialGroup()
+            .addGroup(costosGananciasLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(costosGananciasLayout.createSequentialGroup()
-                        .addComponent(costTitle)
-                        .addGap(11, 11, 11))
-                    .addGroup(costosGananciasLayout.createSequentialGroup()
-                        .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(earningTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(profitTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(earning, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
-            .addComponent(driveTitle11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(profitTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(costosGananciasLayout.createSequentialGroup()
+                            .addComponent(earningTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(earning, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(costosGananciasLayout.createSequentialGroup()
+                            .addComponent(costTitle)
+                            .addGap(36, 36, 36)
+                            .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(59, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, costosGananciasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(driveTitle11, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
         costosGananciasLayout.setVerticalGroup(
             costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, costosGananciasLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(driveTitle11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(costTitle)
                     .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1464,33 +1400,28 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(profitTitle)
                     .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
+                .addGap(283, 283, 283))
         );
 
-        jPanel1.add(costosGanancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 300, 120));
+        jPanel1.add(costosGanancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 340, 120));
 
-        PM.setBackground(new java.awt.Color(0, 51, 153));
+        PM.setBackground(new java.awt.Color(255, 255, 255));
         PM.setForeground(new java.awt.Color(51, 51, 51));
         PM.setEnabled(false);
 
         statusPMTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        statusPMTitle.setForeground(new java.awt.Color(204, 204, 204));
         statusPMTitle.setText("Estado:");
         statusPMTitle.setFocusable(false);
 
         driveTitle13.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle13.setForeground(new java.awt.Color(204, 204, 204));
         driveTitle13.setText("Faltas:");
         driveTitle13.setFocusable(false);
 
         driveTitle16.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle16.setForeground(new java.awt.Color(204, 204, 204));
         driveTitle16.setText("Penalización ($):");
         driveTitle16.setFocusable(false);
 
-        projectManagerStatus.setBackground(new java.awt.Color(0, 51, 153));
         projectManagerStatus.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        projectManagerStatus.setForeground(new java.awt.Color(255, 255, 255));
         projectManagerStatus.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         projectManagerStatus.setText("Por comenzar");
         projectManagerStatus.setBorder(null);
@@ -1501,9 +1432,7 @@ public class HpSimulador extends javax.swing.JFrame {
             }
         });
 
-        strikeCounter.setBackground(new java.awt.Color(0, 51, 153));
         strikeCounter.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        strikeCounter.setForeground(new java.awt.Color(255, 255, 255));
         strikeCounter.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         strikeCounter.setText("0");
         strikeCounter.setBorder(null);
@@ -1514,9 +1443,7 @@ public class HpSimulador extends javax.swing.JFrame {
             }
         });
 
-        cashPenality.setBackground(new java.awt.Color(0, 51, 153));
         cashPenality.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        cashPenality.setForeground(new java.awt.Color(255, 255, 255));
         cashPenality.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         cashPenality.setText("0");
         cashPenality.setBorder(null);
@@ -1527,8 +1454,8 @@ public class HpSimulador extends javax.swing.JFrame {
             }
         });
 
+        driveTitle15.setBackground(new java.awt.Color(255, 255, 255));
         driveTitle15.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        driveTitle15.setForeground(new java.awt.Color(204, 204, 204));
         driveTitle15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle15.setText("PROJECT MANAGER");
         driveTitle15.setFocusable(false);
@@ -1543,22 +1470,14 @@ public class HpSimulador extends javax.swing.JFrame {
                     .addComponent(driveTitle13, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(driveTitle16)
                     .addComponent(statusPMTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PMLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(strikeCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(PMLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(PMLayout.createSequentialGroup()
-                                .addComponent(projectManagerStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(31, Short.MAX_VALUE))
-                            .addGroup(PMLayout.createSequentialGroup()
-                                .addComponent(cashPenality)
-                                .addGap(34, 34, 34))))))
+                    .addComponent(cashPenality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(strikeCounter, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(projectManagerStatus, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PMLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 40, Short.MAX_VALUE)
                 .addComponent(driveTitle15, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         PMLayout.setVerticalGroup(
@@ -1581,19 +1500,17 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel1.add(PM, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 660, 300, 120));
+        jPanel1.add(PM, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 660, 340, 120));
 
-        director.setBackground(new java.awt.Color(0, 51, 153));
+        director.setBackground(new java.awt.Color(255, 255, 255));
         director.setForeground(new java.awt.Color(51, 51, 51));
 
+        statusDirectTitle.setBackground(new java.awt.Color(255, 255, 255));
         statusDirectTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        statusDirectTitle.setForeground(new java.awt.Color(204, 204, 204));
         statusDirectTitle.setText("Estado:");
         statusDirectTitle.setFocusable(false);
 
-        directorStatus.setBackground(new java.awt.Color(0, 51, 153));
         directorStatus.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        directorStatus.setForeground(new java.awt.Color(255, 255, 255));
         directorStatus.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         directorStatus.setText("0");
         directorStatus.setBorder(null);
@@ -1604,8 +1521,8 @@ public class HpSimulador extends javax.swing.JFrame {
             }
         });
 
+        directorTitle.setBackground(new java.awt.Color(255, 255, 255));
         directorTitle.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        directorTitle.setForeground(new java.awt.Color(204, 204, 204));
         directorTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         directorTitle.setText("DIRECTOR");
         directorTitle.setFocusable(false);
@@ -1617,10 +1534,10 @@ public class HpSimulador extends javax.swing.JFrame {
             .addGroup(directorLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(statusDirectTitle)
-                .addGap(67, 67, 67)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(directorTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                .addGap(23, 23, 23))
+            .addComponent(directorTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
         );
         directorLayout.setVerticalGroup(
             directorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1628,19 +1545,19 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(directorTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(directorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(directorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(statusDirectTitle)
-                    .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                    .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
         );
 
-        jPanel1.add(director, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 600, 300, 60));
+        jPanel1.add(director, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 600, 340, 60));
 
         driveTitle.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         driveTitle.setForeground(new java.awt.Color(51, 51, 51));
         driveTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle.setText("Lote Actual");
-        jPanel1.add(driveTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 380, 300, 30));
+        jPanel1.add(driveTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 370, 300, 30));
 
         loteActual.setBackground(new java.awt.Color(255, 255, 255));
         loteActual.setForeground(new java.awt.Color(51, 51, 51));
@@ -1706,13 +1623,13 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(loteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 400, 270, -1));
+        jPanel1.add(loteActual, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 400, 270, -1));
 
         driveTitle26.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         driveTitle26.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         driveTitle26.setText("Último Lote");
-        jPanel1.add(driveTitle26, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 460, 300, 30));
+        jPanel1.add(driveTitle26, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 460, 300, 30));
 
         ultimoLote.setBackground(new java.awt.Color(255, 255, 255));
         ultimoLote.setForeground(new java.awt.Color(51, 51, 51));
@@ -1806,46 +1723,46 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGap(7, 7, 7))
         );
 
-        jPanel1.add(ultimoLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 480, 270, 80));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Captura de pantalla 2024-10-07 204326.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 350, -1, -1));
+        jPanel1.add(ultimoLote, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, 270, 80));
 
         slogan.setBackground(new java.awt.Color(255, 204, 0));
         slogan.setForeground(new java.awt.Color(255, 204, 0));
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        jLabel2.setText("“Make it Matter Keep Reinventing”");
+        jLabel2.setText("\"Think Different.\" ");
 
         javax.swing.GroupLayout sloganLayout = new javax.swing.GroupLayout(slogan);
         slogan.setLayout(sloganLayout);
         sloganLayout.setHorizontalGroup(
             sloganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(sloganLayout.createSequentialGroup()
-                .addGap(140, 140, 140)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sloganLayout.createSequentialGroup()
+                .addContainerGap(246, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(207, 207, 207))
         );
         sloganLayout.setVerticalGroup(
             sloganLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sloganLayout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+            .addGroup(sloganLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel2)
-                .addGap(15, 15, 15))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        jPanel1.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 720, 640, 60));
+        jPanel1.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 720, 630, 60));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/hpLogo.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 20, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mac logo.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 810));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/macApple.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 410, 290));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 830));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void InicioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioBotonActionPerformed
-        
+
     }//GEN-LAST:event_InicioBotonActionPerformed
 
     private void AppleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleBotonActionPerformed
@@ -1984,6 +1901,26 @@ public class HpSimulador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_decreaceAssemblerActionPerformed
 
+    private void currentDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentDeadlineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_currentDeadlineActionPerformed
+
+    private void totalDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalDaysActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalDaysActionPerformed
+
+    private void tGraficaCompTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tGraficaCompTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tGraficaCompTotalActionPerformed
+
+    private void basicCompTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicCompTotalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_basicCompTotalActionPerformed
+
+    private void totalCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalCompActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalCompActionPerformed
+
     private void placaBValueStorageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_placaBValueStorageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_placaBValueStorageActionPerformed
@@ -2007,14 +1944,6 @@ public class HpSimulador extends javax.swing.JFrame {
     private void assemblerValueStorageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assemblerValueStorageActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_assemblerValueStorageActionPerformed
-
-    private void currentDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentDeadlineActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_currentDeadlineActionPerformed
-
-    private void totalDaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalDaysActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalDaysActionPerformed
 
     private void costActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_costActionPerformed
         // TODO add your handling code here:
@@ -2064,18 +1993,6 @@ public class HpSimulador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_batchLastProfitActionPerformed
 
-    private void tGraficaCompTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tGraficaCompTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tGraficaCompTotalActionPerformed
-
-    private void basicCompTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_basicCompTotalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_basicCompTotalActionPerformed
-
-    private void totalCompActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalCompActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_totalCompActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -2093,21 +2010,20 @@ public class HpSimulador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HpSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppleSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HpSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppleSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HpSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppleSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HpSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AppleSimulador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new HpSimulador(apple).setVisible(true);
+                new AppleSimulador(apple).setVisible(true);
             }
         });
     }
@@ -2173,12 +2089,9 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JLabel driveTitle20;
     private javax.swing.JLabel driveTitle22;
     private javax.swing.JLabel driveTitle24;
-    private javax.swing.JLabel driveTitle25;
     private javax.swing.JLabel driveTitle26;
     private javax.swing.JLabel driveTitle27;
     private javax.swing.JLabel driveTitle28;
-    private javax.swing.JLabel driveTitle4;
-    private javax.swing.JLabel driveTitle5;
     private javax.swing.JLabel driveTitle7;
     private javax.swing.JLabel driveTitle9;
     private javax.swing.JTextField earning;
@@ -2213,12 +2126,10 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JTextField placaBValueStorage;
     private javax.swing.JTextField placaBValues;
     private javax.swing.JLabel placaBaseTitle;
-    private javax.swing.JTextField plotTwistChapters;
     private javax.swing.JTextField profit;
     private javax.swing.JLabel profitTitle;
     private javax.swing.JTextField projectManagerStatus;
     private javax.swing.JPanel slogan;
-    private javax.swing.JTextField standardChapters;
     private javax.swing.JLabel statusDirectTitle;
     private javax.swing.JLabel statusPMTitle;
     private javax.swing.JPanel storagePanel;
@@ -2235,7 +2146,6 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JLabel tGraficaTitle1;
     private javax.swing.JTextField tGraficaValueStorage;
     private javax.swing.JLabel titulo;
-    private javax.swing.JTextField totalChapters;
     private javax.swing.JTextField totalComp;
     private javax.swing.JTextField totalDays;
     private javax.swing.JPanel ultimoLote;
