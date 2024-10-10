@@ -456,9 +456,7 @@ public class HpSimulador extends javax.swing.JFrame {
         totalChapters.setFocusable(false);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1209, 808));
         setMinimumSize(new java.awt.Dimension(1209, 808));
-        setPreferredSize(new java.awt.Dimension(1209, 808));
         setSize(new java.awt.Dimension(1209, 808));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1494,7 +1492,7 @@ public class HpSimulador extends javax.swing.JFrame {
                             .addGroup(storagePanelLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addGroup(storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(fAlimentStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 241, Short.MAX_VALUE)
+                                    .addComponent(fAlimentStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                     .addComponent(RAMStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                     .addComponent(cpuStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                     .addComponent(placaBStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
@@ -1603,7 +1601,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(costosGananciasLayout.createSequentialGroup()
                         .addComponent(costTitle)
-                        .addGap(11, 11, 11))
+                        .addGap(0, 0, 0))
                     .addGroup(costosGananciasLayout.createSequentialGroup()
                         .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(earningTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1612,8 +1610,8 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGroup(costosGananciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(earning, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cost, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
             .addComponent(driveTitle11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         costosGananciasLayout.setVerticalGroup(
@@ -1636,7 +1634,7 @@ public class HpSimulador extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        jPanel1.add(costosGanancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 300, 120));
+        jPanel1.add(costosGanancias, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 230, 300, 130));
 
         PM.setBackground(new java.awt.Color(0, 51, 153));
         PM.setForeground(new java.awt.Color(51, 51, 51));
@@ -1786,8 +1784,8 @@ public class HpSimulador extends javax.swing.JFrame {
             .addGroup(directorLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(statusDirectTitle)
-                .addGap(67, 67, 67)
-                .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(directorStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(directorTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
