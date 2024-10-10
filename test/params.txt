@@ -1,24 +1,24 @@
 [General Params]
 DayDuration=2000
-Deadline=30
+Deadline=20
 
 [Apple]
 Productor de placa base=2
-Productor de CPUs=4
-Productor de memoria RAM=1
+Productor de CPUs=3
+Productor de memoria RAM=2
 Productor de fuente de alimentacion=3
-Productor de tarjetas graficas=2
-Ensambladores=3
+Productor de tarjetas graficas=1
+Ensambladores=4
 ProjectManager=1
 Director=1
 MaxCapacity=15
 
 [Hp]
-Productor de placa base=3
+Productor de placa base=2
 Productor de CPUs=2
-Productor de memoria RAM=2
-Productor de fuente de alimentacion=1
-Productor de tarjetas graficas=2
+Productor de memoria RAM=3
+Productor de fuente de alimentacion=2
+Productor de tarjetas graficas=3
 Ensambladores=3
 ProjectManager=1
 Director=1

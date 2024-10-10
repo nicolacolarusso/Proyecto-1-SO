@@ -64,14 +64,14 @@ public class Configurador extends javax.swing.JFrame {
                     .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getEnsamblador())));
 
             this.placaBValues1
-                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdPlacaBase())));
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdPlacaBase())));
             this.cpuValue1
                     .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdCPUs())));
             this.RAMValues1.setText(
                     String.valueOf(countNonNullEmployees(this.app.getHp().getProdMemoriaRAM())));
             this.fAlimentValues1
                     .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion())));
-            this.tGraficaValues.setText(
+            this.tGraficaValues1.setText(
                     String.valueOf(countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica())));
             this.assemblerValues1
                     .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getEnsamblador())));
@@ -586,7 +586,7 @@ public class Configurador extends javax.swing.JFrame {
         titulo.setText("Configurar Parámetros");
         jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, -1, -1));
 
-        workersConfigurations.setBackground(new java.awt.Color(0, 51, 153));
+        workersConfigurations.setBackground(new java.awt.Color(255, 255, 255));
 
         placaB.setBackground(new java.awt.Color(255, 255, 255));
         placaB.setForeground(new java.awt.Color(60, 63, 65));
@@ -1038,17 +1038,14 @@ public class Configurador extends javax.swing.JFrame {
         );
 
         hpConfigTitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        hpConfigTitle.setForeground(new java.awt.Color(255, 255, 255));
         hpConfigTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        hpConfigTitle.setText("Hewlette Packard");
+        hpConfigTitle.setText("Apple");
 
         maxConfigLabel.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        maxConfigLabel.setForeground(new java.awt.Color(255, 255, 255));
         maxConfigLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         maxConfigLabel.setText("Máximo:");
 
         maxCap.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
-        maxCap.setForeground(new java.awt.Color(51, 51, 51));
         maxCap.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout workersConfigurationsLayout = new javax.swing.GroupLayout(workersConfigurations);
@@ -1098,7 +1095,7 @@ public class Configurador extends javax.swing.JFrame {
 
         jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
-        workersConfigurations1.setBackground(new java.awt.Color(255, 255, 255));
+        workersConfigurations1.setBackground(new java.awt.Color(0, 0, 153));
 
         placaB1.setBackground(new java.awt.Color(255, 255, 255));
         placaB1.setForeground(new java.awt.Color(60, 63, 65));
@@ -1550,14 +1547,17 @@ public class Configurador extends javax.swing.JFrame {
         );
 
         appleConfigTitle.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        appleConfigTitle.setForeground(new java.awt.Color(255, 255, 255));
         appleConfigTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        appleConfigTitle.setText("Apple");
+        appleConfigTitle.setText("Hewlette Packard");
 
         maxConfigLabel1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        maxConfigLabel1.setForeground(new java.awt.Color(255, 255, 255));
         maxConfigLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         maxConfigLabel1.setText("Máximo:");
 
         maxCap1.setFont(new java.awt.Font("Montserrat", 1, 19)); // NOI18N
+        maxCap1.setForeground(new java.awt.Color(255, 255, 255));
         maxCap1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout workersConfigurations1Layout = new javax.swing.GroupLayout(workersConfigurations1);
@@ -2390,16 +2390,16 @@ public class Configurador extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void btn_dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dashboardMouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_btn_dashboardMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked

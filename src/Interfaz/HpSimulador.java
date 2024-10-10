@@ -255,7 +255,7 @@ public class HpSimulador extends javax.swing.JFrame {
 
 
     
-    /* hasta              aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii llevoooooooooo */
+
     
     
     
@@ -534,7 +534,7 @@ public class HpSimulador extends javax.swing.JFrame {
             placaBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(placaBLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(placaBaseTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                .addComponent(placaBaseTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
                 .addGap(36, 36, 36)
                 .addComponent(decreasePlacaB)
                 .addGap(18, 18, 18)
@@ -2630,16 +2630,16 @@ public class HpSimulador extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void btn_dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dashboardMouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_btn_dashboardMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked

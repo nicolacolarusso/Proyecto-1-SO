@@ -10,6 +10,7 @@ import Extra.FileFunc;
 import java.awt.Point;
 import java.io.File;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import proyecto1so.mainApp;
@@ -2487,11 +2488,23 @@ public class AppleSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_icono5MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void btn_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarMouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_btn_guardarMouseClicked
 
     private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
@@ -2550,16 +2563,16 @@ public class AppleSimulador extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void btn_dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dashboardMouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_btn_dashboardMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
