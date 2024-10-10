@@ -4,14 +4,21 @@
  */
 package Interfaz;
 
-import static Interfaz.HpSimulador.apple;
+import Extra.FileFunc;
+import java.io.File;
+import javax.swing.JButton;
+import proyecto1so.mainApp;
+
 
 /**
  *
- * @author diego
+ * @author nicolagabrielecolarusso
  */
 public class AppleSimulador extends javax.swing.JFrame {
-    public static AppleHp apple;
+
+    private final mainApp app = mainApp.getInstance();
+    private FileFunc filefunctions = new FileFunc();
+    private File selectedFile = app.getSelectedFile();
     /**
      * Creates new form AppleSimulador
      */
@@ -163,6 +170,7 @@ public class AppleSimulador extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1170, 830));
@@ -1955,13 +1963,23 @@ public class AppleSimulador extends javax.swing.JFrame {
         });
         jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 20, -1));
 
+        jLabel4.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("TechNexus 2024 ®");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 750, -1, 40));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 830));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void increasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlacaBMouseClicked
-        // TODO add your handling code here:
+         /*if (this.canIncreaseQuantity(0)) {
+            this.placaBValues.setText(increaseQuantity(this.placaBValues.getText(), increasePlacaB));
+            helper.agregarTrabajador(0, 0);
+        }
+        updateBtnStatus();*/
     }//GEN-LAST:event_increasePlacaBMouseClicked
 
     private void increasePlacaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlacaBActionPerformed
@@ -1973,7 +1991,11 @@ public class AppleSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_placaBValuesActionPerformed
 
     private void decreasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreasePlacaBMouseClicked
-        // TODO add your handling code here:
+       /* if (canDecreaseQuantity(0)) {
+            this.placaBValues.setText(decreaseQuantity(this.placaBValues.getText(), this.decreasePlacaB));
+            helper.eliminarTrabajador(0, 0);
+        }
+        updateBtnStatus();*/
     }//GEN-LAST:event_decreasePlacaBMouseClicked
 
     private void decreasePlacaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreasePlacaBActionPerformed
@@ -1985,7 +2007,11 @@ public class AppleSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_cpuValueActionPerformed
 
     private void increaseCpuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseCpuMouseClicked
-        // TODO add your handling code here:
+       /* if (canIncreaseQuantity(1)) {
+            this.cpuValue.setText(increaseQuantity(this.cpuValue.getText(), increaseCpu));
+            helper.agregarTrabajador(0, 1);
+        }
+        updateBtnStatus();*/
     }//GEN-LAST:event_increaseCpuMouseClicked
 
     private void increaseCpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseCpuActionPerformed
@@ -1993,7 +2019,11 @@ public class AppleSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseCpuActionPerformed
 
     private void decreaseCpuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseCpuMouseClicked
-        // TODO add your handling code here:
+        /*if (canDecreaseQuantity(1)) {
+            this.cpuValue.setText(decreaseQuantity(this.cpuValue.getText(), decreaseCpu));
+            helper.eliminarTrabajador(0, 1);
+        }
+        updateBtnStatus();*/
     }//GEN-LAST:event_decreaseCpuMouseClicked
 
     private void decreaseCpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseCpuActionPerformed
@@ -2269,6 +2299,49 @@ public class AppleSimulador extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 
+     /*private String increaseQuantity(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (actualEmployees < maxEmployees) {
+                intValue++;
+                actualEmployees++;
+            }
+            return String.valueOf(intValue);
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+            return actualValue; // Retorna el valor actual en caso de error
+        }
+    }
+
+    private String decreaseQuantity(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (intValue > 1) {
+                intValue--;
+                actualEmployees--;
+                return String.valueOf(intValue);
+            } else {
+                return String.valueOf(intValue);
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+        }
+        return null;
+    }
+
+    private boolean canDecreaseQuantity(int type) {
+        updateValues();
+        return values[type] > 1;
+    }
+
+    private boolean canIncreaseQuantity(int type) {
+        updateValues();
+        return actualEmployees < maxEmployees;
+    }
+    */
+    
     /**
      * @param args the command line arguments
      */
@@ -2396,6 +2469,7 @@ public class AppleSimulador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

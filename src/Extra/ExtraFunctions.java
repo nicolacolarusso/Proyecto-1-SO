@@ -114,7 +114,7 @@ public class ExtraFunctions {
     }
 
     //OJOOOOO ver si realmente lo necesitamos
-    /*
+    
     private void ponerArregloTrabajadoresPorTipo(ComputerCompany compCompany, int workerType, Worker[] newWorker) {
         switch (workerType) {
             case 0:
@@ -133,7 +133,7 @@ public class ExtraFunctions {
                 compCompany.setProdTarjetaGrafica(newWorker);
                 break;
         }
-    }*/
+    }
     
     
     //funcion para agregar un trabajador en la compania de la instancia creada en app

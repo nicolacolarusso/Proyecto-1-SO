@@ -54,6 +54,7 @@ public class Worker extends Thread{
     
     //armamos el esqueleto del hilo. Los hilos serán cada instancia de la clase trabajador. 
     //Donde ejecutan el ciclo de trabajo (proceso de producción, pago y subida de trabajo), hasta que son interrumpidos.
+    @Override
     public void run(){
         while (!Thread.interrupted()){
             try{
@@ -183,8 +184,7 @@ public class Worker extends Thread{
     }
     
     
-    //ES NECESARIO?????
-    /*
+   
     @Override
     public String toString() {
         return """
@@ -202,8 +202,6 @@ public class Worker extends Thread{
                 + "-semaphore= " + (getSemaphore() != null ? "assigned" : "not assigned") + "\n"
                 + "\n}";
     }
-    */
-    
     
     
     //GETTERS Y SETTERS

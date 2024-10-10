@@ -16,6 +16,7 @@ import Classes.ComputerCompany;
  * @author diego
  */
 public class FileFunc {
+    
     public static String leerArchivo(File file) {
         String line;
         String data = "";
@@ -167,8 +168,8 @@ public class FileFunc {
         int director = apple.getDirector();
         int maxCapacity = apple.getMaxWorkersQuantity();
 
-        data += "Productor de placa base=" + prodPlacaBase + "\n" + "Productor de CPUs=" + prodCPUs + "\n" + "Productor de memoria RAM="
-                + prodMemoriaRAM + "\n" + "Productor de fuente de alimentacion=" + prodFuenteAlimentacion + "\n" + "Productor de tarjetas graficas="
+        data += "ProductorDePlacabase=" + prodPlacaBase + "\n" + "ProductorDeCPUs=" + prodCPUs + "\n" + "ProductorDeMemoriaRAM="
+                + prodMemoriaRAM + "\n" + "ProductorDeFuenteDeAlimentacion=" + prodFuenteAlimentacion + "\n" + "ProductorDeTarjetasGraficas="
                 + prodTarjetaGrafica + "\n" + "Ensambladores=" + ensamblador + "\n" + "ProjectManager=" + projectManager
                 + "\n" + "Director=" + director + "\n" + "MaxCapacidad=" + maxCapacity + "\n\n";
 
@@ -183,9 +184,10 @@ public class FileFunc {
         ensamblador = hp.countNonNull(hp.getEnsamblador());
         projectManager = hp.getProjectManager();
         director = hp.getDirector();
+        maxCapacity = hp.getMaxWorkersQuantity();
 
-        data += "Productor de placa base=" + prodPlacaBase + "\n" + "Productor de CPUs=" + prodCPUs + "\n" + "Productor de memoria RAM="
-                + prodMemoriaRAM + "\n" + "Productor de fuente de alimentacion=" + prodFuenteAlimentacion + "\n" + "Productor de tarjetas graficas="
+        data += "ProductorDePlacabase=" + prodPlacaBase + "\n" + "ProductorDeCPUs=" + prodCPUs + "\n" + "ProductorDeMemoriaRAM="
+                + prodMemoriaRAM + "\n" + "ProductorDeFuenteDeAlimentacion=" + prodFuenteAlimentacion + "\n" + "ProductorDeTarjetasGraficas="
                 + prodTarjetaGrafica + "\n" + "Ensambladores=" + ensamblador + "\n" + "ProjectManager=" + projectManager
                 + "\n" + "Director=" + director + "\n" + "MaxCapacidad=" + maxCapacity + "\n\n";
 
