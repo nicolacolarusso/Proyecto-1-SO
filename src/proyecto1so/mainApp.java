@@ -26,7 +26,7 @@ public class mainApp {
     private static int deadline;
     private ComputerCompany apple;
     private ComputerCompany Hp;
-    //private static ChartManager chartManager;
+    private static ManejadorGraf chartManager;
     
     private static mainApp app;
 
@@ -45,7 +45,7 @@ public class mainApp {
         System.out.println(getHp().getName());
         getApple().start();
         getHp().start();
-        //chartManager = new ChartManager();
+        chartManager = new ManejadorGraf();
         
         AppleHp apple = new AppleHp();
         apple.setVisible(true);
@@ -121,8 +121,8 @@ public class mainApp {
     public static void setApp(mainApp aApp) {
         app = aApp;
     }
-/*
-     public static ChartManager getChartManager() {
+
+     public static ManejadorGraf getChartManager() {
         return chartManager;
-    }*/
+    }
 }

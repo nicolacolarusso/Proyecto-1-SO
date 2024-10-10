@@ -4,22 +4,104 @@
  */
 package Interfaz;
 
+import java.awt.Point;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+import org.jfree.data.xy.XYSeries;
+import proyecto1so.mainApp;
+
 /**
  *
  * @author nicolagabrielecolarusso
  */
 public class Metricas extends javax.swing.JFrame {
-    public static AppleHp apple;
+    
+    
+    private Point initialClick;
+    private final mainApp app = mainApp.getInstance();
+    private XYSeries compApple;
+    private XYSeries compHp;
+    private Timer updateTimer;
+    private static Metricas instance;
+
     /**
-     * Creates new form Metricas
+     * Obtiene la instancia única de Dashboard. Si no existe, la crea. Si
+     * existe, retorna la existente.
+     *
+     * @return la instancia única de Dashboard.
      */
-    public Metricas(AppleHp apple) {
-        initComponents();
-        this.apple = apple;
-        apple.setVisible(false);
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+    public static synchronized Metricas getInstance() {
+        if (instance == null) {
+            instance = new Metricas();
+        }
+        return instance;
     }
+
+    /**
+     * Constructor privado para prevenir la instanciación.
+     */
+    public Metricas() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        JPanelJChart.setLayout(new java.awt.BorderLayout());
+        JPanelJChart.add(app.getChartManager().getChartPanel(), java.awt.BorderLayout.CENTER);
+        JPanelJChart.validate();
+        this.start();
+    }
+
+    private void start() {
+        // Crear un nuevo hilo para el bucle infinito
+        Thread updateThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        // Ejecutar las actualizaciones de la UI en el EDT
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                profit1.setText(formatNumberAsK((int) app.getHp().getEarning() - (int) app.getApple().getTotalCost()));
+                                cost1.setText(formatNumberAsK((int) app.getHp().getTotalCost()));
+                                earning1.setText(formatNumberAsK((int) app.getHp().getEarning()));
+
+                                profit.setText(formatNumberAsK((int) app.getApple().getEarning() - (int) app.getApple().getTotalCost()));
+                                cost2.setText(formatNumberAsK((int) app.getApple().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getApple().getEarning()));
+
+                                totalDays.setText(String.valueOf(app.getHp().getTotalDays()));
+                                currentDeadline.setText(String.valueOf(app.getHp().getRemainingDays()));
+
+                            }
+                        });
+
+                        // Pausar el hilo separado, no el EDT
+                        Thread.sleep(app.getDayDuration() / 48);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Iniciar el hilo
+        updateThread.start();
+    }
+
+    public String formatNumberAsK(int number) {
+        // Se onverte el número a miles
+        double thousands = number / 1000.0;
+
+        // Se redondea a dos dígitos significativos
+        double rounded = Math.round(thousands * 100.0) / 100.0;
+
+        // Se convierte a cadena y se añade 'K'
+        return rounded + "K";
+    }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -716,16 +798,16 @@ public class Metricas extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void btn_dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dashboardMouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_btn_dashboardMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
@@ -775,7 +857,7 @@ public class Metricas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Metricas(apple).setVisible(true);
+                new Metricas().setVisible(true);
             }
         });
     }
