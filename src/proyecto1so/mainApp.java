@@ -27,9 +27,10 @@ public class mainApp {
     private ComputerCompany apple;
     private ComputerCompany Hp;
     //private static ChartManager chartManager;
+    
     private static mainApp app;
 
-    //funcion que genera la instancia global a usar en las demas clases
+    //funcion que genera la instancia global a usar en las demas clases (aquella unica de la aplicacion)
     public static synchronized mainApp getInstance() {
         if (getApp() == null) {
             setApp(new mainApp());
@@ -39,10 +40,13 @@ public class mainApp {
 
     public void start() {
         ExtraFunctions.cargarParametros();
+        
         //Inicia la simulacion
+        System.out.println(getHp().getName());
         getApple().start();
         getHp().start();
-        //chartManager = new ChartManager();]
+        //chartManager = new ChartManager();
+        
         AppleHp apple = new AppleHp();
         apple.setVisible(true);
     }

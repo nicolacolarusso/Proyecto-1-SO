@@ -12,6 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import proyecto1so.mainApp;
@@ -410,6 +411,7 @@ public class HpSimulador extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         driveTitle4.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         driveTitle4.setForeground(new java.awt.Color(204, 204, 204));
@@ -965,12 +967,12 @@ public class HpSimulador extends javax.swing.JFrame {
                         .addComponent(maxConfTrabLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(maxCap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(tGrafica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                    .addComponent(fAliment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                    .addComponent(RAM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                    .addComponent(cpu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                    .addComponent(tGrafica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                    .addComponent(fAliment, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                    .addComponent(RAM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                    .addComponent(cpu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
                     .addComponent(placaB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(assembler, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE))
+                    .addComponent(assembler, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
         workersConfigurationsLayout.setVerticalGroup(
@@ -2279,13 +2281,23 @@ public class HpSimulador extends javax.swing.JFrame {
         });
         jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("TechNexus 2024 ®");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 750, -1, 40));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 810));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void increasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlacaBMouseClicked
-        // TODO add your handling code here:
+         if (this.canIncreaseQuantity(0)) {
+            this.placaBValues.setText(increaseQuantity(this.placaBValues.getText(), increasePlacaB));
+            helper.agregarTrabajador(1, 0);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increasePlacaBMouseClicked
 
     private void increasePlacaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlacaBActionPerformed
@@ -2297,7 +2309,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_placaBValuesActionPerformed
 
     private void decreasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreasePlacaBMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(0)) {
+            this.placaBValues.setText(decreaseQuantity(this.placaBValues.getText(), this.decreasePlacaB));
+            helper.eliminarTrabajador(1, 0);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreasePlacaBMouseClicked
 
     private void decreasePlacaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreasePlacaBActionPerformed
@@ -2309,7 +2325,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_cpuValueActionPerformed
 
     private void increaseCpuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseCpuMouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity(1)) {
+            this.cpuValue.setText(increaseQuantity(this.cpuValue.getText(), increaseCpu));
+            helper.agregarTrabajador(1, 1);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseCpuMouseClicked
 
     private void increaseCpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseCpuActionPerformed
@@ -2317,7 +2337,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseCpuActionPerformed
 
     private void decreaseCpuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseCpuMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(1)) {
+            this.cpuValue.setText(decreaseQuantity(this.cpuValue.getText(), decreaseCpu));
+            helper.eliminarTrabajador(1, 1);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaseCpuMouseClicked
 
     private void decreaseCpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseCpuActionPerformed
@@ -2329,7 +2353,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_RAMValuesActionPerformed
 
     private void decreaseRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseRAMMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(2)) {
+            this.RAMValues.setText(decreaseQuantity(this.RAMValues.getText(), decreaseRAM));
+            helper.eliminarTrabajador(1, 2);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaseRAMMouseClicked
 
     private void decreaseRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseRAMActionPerformed
@@ -2337,7 +2365,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaseRAMActionPerformed
 
     private void increaseRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseRAMMouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity(2)) {
+            this.RAMValues.setText(increaseQuantity(this.RAMValues.getText(), increaseRAM));
+            helper.agregarTrabajador(1, 2);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseRAMMouseClicked
 
     private void increaseRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseRAMActionPerformed
@@ -2345,7 +2377,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseRAMActionPerformed
 
     private void decreaseFAlimentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseFAlimentMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(3)) {
+            this.FAlimentValues.setText(decreaseQuantity(this.FAlimentValues.getText(), decreaseFAliment));
+            helper.eliminarTrabajador(1, 3);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaseFAlimentMouseClicked
 
     private void decreaseFAlimentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseFAlimentActionPerformed
@@ -2357,7 +2393,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_FAlimentValuesActionPerformed
 
     private void increaseFAlimentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseFAlimentMouseClicked
-        // TODO add your handling code here:
+         if (canIncreaseQuantity(3)) {
+            this.FAlimentValues.setText(increaseQuantity(this.FAlimentValues.getText(), increaseFAliment));
+            helper.agregarTrabajador(1, 3);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseFAlimentMouseClicked
 
     private void increaseFAlimentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseFAlimentActionPerformed
@@ -2365,7 +2405,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseFAlimentActionPerformed
 
     private void increaseTGraficaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseTGraficaMouseClicked
-        // TODO add your handling code here:
+           if (canIncreaseQuantity(4)) {
+            this.TGraficaValues.setText(increaseQuantity(this.TGraficaValues.getText(), increaseTGrafica));
+            helper.agregarTrabajador(1, 4);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseTGraficaMouseClicked
 
     private void increaseTGraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseTGraficaActionPerformed
@@ -2377,7 +2421,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_TGraficaValuesActionPerformed
 
     private void decreaceTGraficaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceTGraficaMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(4)) {
+            this.TGraficaValues.setText(decreaseQuantity(this.TGraficaValues.getText(), decreaceTGrafica));
+            helper.eliminarTrabajador(1, 4);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaceTGraficaMouseClicked
 
     private void decreaceTGraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceTGraficaActionPerformed
@@ -2385,7 +2433,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaceTGraficaActionPerformed
 
     private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssemblerMouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity(5)) {
+            this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
+            helper.agregarTrabajador(1, 5);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseAssemblerMouseClicked
 
     private void increaseAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAssemblerActionPerformed
@@ -2397,7 +2449,11 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_assemblerValuesActionPerformed
 
     private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssemblerMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(5)) {
+            this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
+            helper.eliminarTrabajador(1, 5);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaceAssemblerMouseClicked
 
     private void decreaceAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceAssemblerActionPerformed
@@ -2501,11 +2557,23 @@ public class HpSimulador extends javax.swing.JFrame {
     }//GEN-LAST:event_icono5MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void btn_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarMouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_btn_guardarMouseClicked
 
     private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
@@ -2593,6 +2661,49 @@ public class HpSimulador extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMousePressed
 
+    private String increaseQuantity(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (actualEmployees < maxEmployees) {
+                intValue++;
+                actualEmployees++;
+            }
+            return String.valueOf(intValue);
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+            return actualValue; // Retorna el valor actual en caso de error
+        }
+    }
+
+    private String decreaseQuantity(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (intValue > 1) {
+                intValue--;
+                actualEmployees--;
+                return String.valueOf(intValue);
+            } else {
+                return String.valueOf(intValue);
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+        }
+        return null;
+    }
+
+    private boolean canDecreaseQuantity(int type) {
+        updateValues();
+        return values[type] > 1;
+    }
+
+    private boolean canIncreaseQuantity(int type) {
+        updateValues();
+        return actualEmployees < maxEmployees;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -2717,6 +2828,7 @@ public class HpSimulador extends javax.swing.JFrame {
     private javax.swing.JButton increasePlacaB;
     private javax.swing.JButton increaseRAM;
     private javax.swing.JButton increaseTGrafica;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;

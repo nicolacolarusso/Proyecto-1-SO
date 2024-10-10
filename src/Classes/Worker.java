@@ -184,7 +184,7 @@ public class Worker extends Thread{
     }
     
     
-
+   
     @Override
     public String toString() {
         return """
@@ -202,8 +202,6 @@ public class Worker extends Thread{
                 + "-semaphore= " + (getSemaphore() != null ? "assigned" : "not assigned") + "\n"
                 + "\n}";
     }
-
-    
     
     
     //GETTERS Y SETTERS

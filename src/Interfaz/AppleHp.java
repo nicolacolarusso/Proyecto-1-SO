@@ -5,7 +5,10 @@
 package Interfaz;
 
 import java.awt.Point;
+import javax.swing.JOptionPane;
 import proyecto1so.mainApp;
+import Extra.FileFunc;
+import java.io.File;
 
 /**
  *
@@ -17,10 +20,13 @@ public class AppleHp extends javax.swing.JFrame {
      */
     private Point initialClick;
     private final mainApp app = mainApp.getInstance();
+    
+    private FileFunc filefunctions = new FileFunc();
+    private File selectedFile = app.getSelectedFile();/*
     public static HpSimulador hp;
     public static AppleSimulador apple;
     public static Configurador configurador;
-    public static Metricas dashboard;
+    public static Metricas dashboard;*/
             
     public AppleHp() {
         initComponents();
@@ -64,6 +70,7 @@ public class AppleHp extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         exit1 = new javax.swing.JLabel();
         exit = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(937, 688));
@@ -414,6 +421,12 @@ public class AppleHp extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("TechNexus 2024 ®");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, 40));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 700));
 
         pack();
@@ -424,11 +437,23 @@ public class AppleHp extends javax.swing.JFrame {
     }//GEN-LAST:event_icono5MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void btn_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarMouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_btn_guardarMouseClicked
 
     private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
@@ -580,6 +605,7 @@ public class AppleHp extends javax.swing.JFrame {
     private javax.swing.JLabel icono4;
     private javax.swing.JLabel icono5;
     private javax.swing.JLabel icono7;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
