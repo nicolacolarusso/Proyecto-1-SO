@@ -1,117 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JLabel" name="driveTitle4">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Cap&#xed;tulos plotTwist:"/>
-        <Property name="focusable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="plotTwistChapters">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="3c" green="2e" red="22" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="0"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="null"/>
-        </Property>
-        <Property name="focusable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="standardChapters">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="3c" green="2e" red="22" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="0"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="null"/>
-        </Property>
-        <Property name="focusable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="driveTitle5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Cap&#xed;tulos normales:"/>
-        <Property name="focusable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="driveTitle25">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Cap&#xed;tulos (total):"/>
-        <Property name="focusable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="totalChapters">
-      <Properties>
-        <Property name="editable" type="boolean" value="false"/>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="3c" green="2e" red="22" type="rgb"/>
-        </Property>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Montserrat" size="16" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="0"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="null"/>
-        </Property>
-        <Property name="focusable" type="boolean" value="false"/>
-      </Properties>
-    </Component>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1209, 808]"/>
+      <Dimension value="[1170, 830]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1209, 808]"/>
-    </Property>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1209, 808]"/>
+      <Dimension value="[1170, 830]"/>
     </Property>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1209, 808]"/>
+      <Dimension value="[1170, 830]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -128,7 +27,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,38,0,0,4,-95"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,3,55,0,0,4,-106"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -140,19 +39,10 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1176, 811]"/>
-        </Property>
-        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1176, 811]"/>
-        </Property>
-        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1176, 811]"/>
-        </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="1260" height="810"/>
+          <AbsoluteConstraints x="0" y="0" width="1170" height="830"/>
         </Constraint>
       </Constraints>
 
@@ -168,18 +58,18 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Hewlette Packard"/>
+            <Property name="text" type="java.lang.String" value="Apple"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="40" width="-1" height="-1"/>
+              <AbsoluteConstraints x="530" y="30" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Container class="javax.swing.JPanel" name="workersConfigurations">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="33" red="0" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -247,9 +137,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="19" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="TRABAJADORES"/>
               </Properties>
@@ -269,7 +156,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="placaBaseTitle" pref="176" max="32767" attributes="0"/>
+                          <Component id="placaBaseTitle" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="decreasePlacaB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -945,9 +832,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="19" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="CONFIGURACI&#xd3;N"/>
               </Properties>
@@ -957,9 +841,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="19" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="M&#xe1;ximo:"/>
               </Properties>
@@ -968,9 +849,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="19" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
@@ -988,7 +866,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="170" y="130" width="950" height="100"/>
+              <AbsoluteConstraints x="170" y="130" width="990" height="100"/>
             </Constraint>
           </Constraints>
 
@@ -998,26 +876,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="diasTitle" max="32767" attributes="0"/>
-                          <Component id="diasEntregaTitle" pref="221" max="32767" attributes="0"/>
+                          <Component id="diasTitle" alignment="1" max="32767" attributes="0"/>
+                          <Component id="diasEntregaTitle" alignment="1" pref="221" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="currentDeadline" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="totalDays" pref="0" max="32767" attributes="0"/>
+                          <Component id="totalDays" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="diasPanel2" min="-2" pref="293" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="diasPanel2" min="-2" pref="303" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="diasTitle" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1106,36 +984,36 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="driveTitle27" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                                  <Component id="totalComp" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="driveTitle9" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="driveTitle10" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="basicCompTotal" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                                      <Component id="tGraficaCompTotal" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="driveTitle10" max="32767" attributes="0"/>
-                                      <Component id="driveTitle9" pref="232" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="basicCompTotal" min="-2" pref="44" max="-2" attributes="0"/>
-                                      <Component id="tGraficaCompTotal" min="-2" pref="44" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="driveTitle27" max="32767" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="totalComp" min="-2" pref="44" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="330" pref="330" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="370" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="driveTitle27" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
-                              <Component id="totalComp" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="driveTitle27" alignment="0" min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="totalComp" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1250,7 +1128,7 @@
         <Container class="javax.swing.JPanel" name="storagePanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
+              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -1262,31 +1140,28 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="storageTitle2" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="storageTitle" min="-2" pref="248" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="fAlimentStorage" alignment="0" pref="241" max="32767" attributes="0"/>
-                                          <Component id="RAMStorage" alignment="0" pref="241" max="32767" attributes="0"/>
-                                          <Component id="cpuStorage" alignment="0" pref="241" max="32767" attributes="0"/>
-                                          <Component id="placaBStorage" alignment="0" pref="241" max="32767" attributes="0"/>
-                                          <Component id="tGraficaStorage" alignment="0" pref="241" max="32767" attributes="0"/>
-                                          <Component id="assemblerStorage" alignment="0" pref="241" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="storageTitle" min="-2" pref="248" max="-2" attributes="0"/>
+                                  <Component id="storageTitle2" alignment="0" min="-2" pref="263" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="assemblerStorage" alignment="0" pref="251" max="32767" attributes="0"/>
+                                      <Component id="tGraficaStorage" alignment="0" pref="251" max="32767" attributes="0"/>
+                                      <Component id="fAlimentStorage" alignment="0" pref="251" max="32767" attributes="0"/>
+                                      <Component id="RAMStorage" alignment="0" pref="251" max="32767" attributes="0"/>
+                                      <Component id="cpuStorage" alignment="0" pref="251" max="32767" attributes="0"/>
+                                      <Component id="placaBStorage" alignment="0" pref="251" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="16" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1537,21 +1412,21 @@
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Component id="memoriaRAMTitle1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="RAMValueStorage" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="RAMValueStorage" min="-2" pref="57" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="RAMLimit1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="315" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="RAMValueStorage" alignment="0" pref="32" max="32767" attributes="0"/>
-                              <Component id="memoriaRAMTitle1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="RAMLimit1" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="memoriaRAMTitle1" alignment="3" pref="32" max="32767" attributes="0"/>
+                              <Component id="RAMValueStorage" alignment="3" max="32767" attributes="0"/>
+                              <Component id="RAMLimit1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1625,7 +1500,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="fAlimentTitle1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Component id="fAlimentValueStorage" min="-2" pref="25" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="fAlimentLimit1" min="-2" max="-2" attributes="0"/>
@@ -1809,7 +1684,7 @@
                           <Component id="assemblerValueStorage" min="-2" pref="24" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="assemblerLimit3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1879,7 +1754,7 @@
         <Container class="javax.swing.JPanel" name="costosGanancias">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="33" red="0" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -1888,44 +1763,49 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="820" y="230" width="300" height="120"/>
+              <AbsoluteConstraints x="820" y="230" width="340" height="120"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="costTitle" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="profitTitle" min="-2" pref="163" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <Component id="profit" min="-2" pref="45" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="earningTitle" max="32767" attributes="0"/>
-                                  <Component id="profitTitle" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="earningTitle" min="-2" pref="192" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="earning" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="costTitle" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="cost" min="-2" pref="55" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="earning" min="-2" pref="44" max="-2" attributes="0"/>
-                          <Component id="cost" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="profit" min="-2" pref="49" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="59" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="driveTitle11" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="driveTitle11" min="-2" pref="242" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="driveTitle11" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="driveTitle11" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="costTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cost" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1940,7 +1820,7 @@
                           <Component id="profitTitle" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="profit" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="283" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1951,9 +1831,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ganancia bruta:"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
@@ -1963,9 +1840,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Costos operativos:"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
@@ -1974,9 +1848,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="COSTOS/ GANANCIAS"/>
@@ -1988,23 +1859,14 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Ganancia neta:"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="cost">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -2019,14 +1881,8 @@
             </Component>
             <Component class="javax.swing.JTextField" name="earning">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -2041,14 +1897,8 @@
             </Component>
             <Component class="javax.swing.JTextField" name="profit">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -2066,7 +1916,7 @@
         <Container class="javax.swing.JPanel" name="PM">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="33" red="0" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -2075,7 +1925,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="820" y="660" width="300" height="120"/>
+              <AbsoluteConstraints x="820" y="660" width="340" height="120"/>
             </Constraint>
           </Constraints>
 
@@ -2089,29 +1939,16 @@
                           <Component id="driveTitle16" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="statusPMTitle" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="12" max="32767" attributes="0"/>
-                              <Component id="strikeCounter" min="-2" pref="99" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="projectManagerStatus" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="31" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="cashPenality" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                          <Component id="cashPenality" alignment="1" min="-2" pref="105" max="-2" attributes="0"/>
+                          <Component id="strikeCounter" alignment="1" min="-2" pref="99" max="-2" attributes="0"/>
+                          <Component id="projectManagerStatus" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
                       <Component id="driveTitle15" min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -2147,9 +1984,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Estado:"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
@@ -2158,9 +1992,6 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Faltas:"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -2171,23 +2002,14 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Penalizaci&#xf3;n ($):"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="projectManagerStatus">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="Por comenzar"/>
@@ -2202,14 +2024,8 @@
             </Component>
             <Component class="javax.swing.JTextField" name="strikeCounter">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -2224,14 +2040,8 @@
             </Component>
             <Component class="javax.swing.JTextField" name="cashPenality">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -2246,11 +2056,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="driveTitle15">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="PROJECT MANAGER"/>
@@ -2262,7 +2072,7 @@
         <Container class="javax.swing.JPanel" name="director">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="99" green="33" red="0" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -2270,7 +2080,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="820" y="600" width="300" height="60"/>
+              <AbsoluteConstraints x="820" y="600" width="340" height="60"/>
             </Constraint>
           </Constraints>
 
@@ -2280,11 +2090,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="statusDirectTitle" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                      <Component id="directorStatus" min="-2" pref="126" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="directorStatus" min="-2" pref="126" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="directorTitle" alignment="0" pref="300" max="32767" attributes="0"/>
+                  <Component id="directorTitle" alignment="0" pref="340" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2293,11 +2103,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="directorTitle" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="statusDirectTitle" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="directorStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="statusDirectTitle" min="-2" max="-2" attributes="0"/>
+                          <Component id="directorStatus" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2305,11 +2115,11 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="statusDirectTitle">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estado:"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -2317,14 +2127,8 @@
             </Component>
             <Component class="javax.swing.JTextField" name="directorStatus">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="33" red="0" type="rgb"/>
-                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Montserrat" size="16" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="4"/>
                 <Property name="text" type="java.lang.String" value="0"/>
@@ -2339,11 +2143,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="directorTitle">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="DIRECTOR"/>
@@ -2352,7 +2156,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="loteActualTitle">
+        <Component class="javax.swing.JLabel" name="driveTitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="18" style="1"/>
@@ -2365,7 +2169,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="830" y="380" width="300" height="30"/>
+              <AbsoluteConstraints x="840" y="370" width="300" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -2380,7 +2184,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="840" y="400" width="270" height="-1"/>
+              <AbsoluteConstraints x="850" y="400" width="270" height="-1"/>
             </Constraint>
           </Constraints>
 
@@ -2395,11 +2199,11 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="tGraficaComp" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="basicComp" pref="0" max="32767" attributes="0"/>
+                          <Component id="basicComp" alignment="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   </Group>
@@ -2476,7 +2280,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="ultimoLoteTitle">
+        <Component class="javax.swing.JLabel" name="driveTitle26">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Black" size="18" style="1"/>
@@ -2489,7 +2293,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="820" y="460" width="300" height="30"/>
+              <AbsoluteConstraints x="840" y="460" width="300" height="30"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -2504,7 +2308,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="840" y="480" width="270" height="80"/>
+              <AbsoluteConstraints x="850" y="490" width="270" height="80"/>
             </Constraint>
           </Constraints>
 
@@ -2526,8 +2330,8 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tGraficaCompLast" min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="basicCompLast" pref="0" max="32767" attributes="0"/>
+                                  <Component id="tGraficaCompLast" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                  <Component id="basicCompLast" alignment="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -2550,11 +2354,11 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="driveTitle28" max="32767" attributes="0"/>
                               <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="batchLastProfit" min="-2" max="-2" attributes="0"/>
+                          <Component id="batchLastProfit" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                   </Group>
@@ -2648,18 +2452,6 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="foto">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/Captura de pantalla 2024-10-07 204326.png"/>
-            </Property>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="770" y="350" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
         <Container class="javax.swing.JPanel" name="slogan">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -2671,26 +2463,26 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="170" y="720" width="640" height="60"/>
+              <AbsoluteConstraints x="170" y="720" width="630" height="60"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="246" max="32767" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="158" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace pref="17" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2701,20 +2493,32 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="&#x201c;Make it Matter Keep Reinventing&#x201d;"/>
+                <Property name="text" type="java.lang.String" value="&quot;Think Different.&quot; "/>
               </Properties>
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="logo">
+        <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Imagenes/hpLogo.png"/>
+              <Image iconType="3" name="/Imagenes/mac logo.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1020" y="20" width="-1" height="-1"/>
+              <AbsoluteConstraints x="1010" y="10" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Imagenes/macApple.png"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="770" y="320" width="410" height="290"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -2858,7 +2662,7 @@
         <Container class="javax.swing.JPanel" name="btn_apple">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="66" green="66" red="66" type="rgb"/>
+              <Color blue="0" green="cc" red="ff" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -2911,9 +2715,6 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="23" style="0"/>
                 </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Apple"/>
               </Properties>
               <Events>
@@ -2925,7 +2726,7 @@
         <Container class="javax.swing.JPanel" name="btn_hp">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="ff" type="rgb"/>
+              <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -2977,6 +2778,9 @@
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial Black" size="23" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hp"/>
               </Properties>
@@ -3119,7 +2923,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1130" y="20" width="-1" height="-1"/>
+              <AbsoluteConstraints x="1130" y="20" width="20" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
