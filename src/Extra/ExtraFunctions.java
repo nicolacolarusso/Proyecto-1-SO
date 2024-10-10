@@ -80,7 +80,7 @@ public class ExtraFunctions {
                     workers[3], workers[4],
                     workers[5], projectManager, director, storage, semaphore);
 
-            // Se crea al projectManager y al director, se les pasa la cadena televisiva.
+            // Se crea al projectManager y al director, se les pasa la compania.
             ProjectManager projectManagerInstance = new ProjectManager(company, 1, 5, 1, 1,
                     ExtraData.hourlySalary[5], storage, semaphore);
             compCompany.setProjectManagerInstance(projectManagerInstance);
@@ -114,7 +114,7 @@ public class ExtraFunctions {
     }
 
     //OJOOOOO ver si realmente lo necesitamos
-    /*
+    
     private void ponerArregloTrabajadoresPorTipo(ComputerCompany compCompany, int workerType, Worker[] newWorker) {
         switch (workerType) {
             case 0:
@@ -133,7 +133,7 @@ public class ExtraFunctions {
                 compCompany.setProdTarjetaGrafica(newWorker);
                 break;
         }
-    }*/
+    }
     
     
     //funcion para agregar un trabajador en la compania de la instancia creada en app

@@ -4,12 +4,19 @@
  */
 package Interfaz;
 
+import Extra.FileFunc;
+import java.io.File;
+import javax.swing.JOptionPane;
+import proyecto1so.mainApp;
+
 /**
  *
  * @author nicolagabrielecolarusso
  */
 public class Configurador extends javax.swing.JFrame {
-    public static AppleHp apple;
+     private final mainApp app = mainApp.getInstance();
+    private FileFunc filefunctions = new FileFunc();
+    private File selectedFile = app.getSelectedFile();
     /**
      * Creates new form Configurador
      */
@@ -132,6 +139,7 @@ public class Configurador extends javax.swing.JFrame {
         btn_Inicio = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1209, 808));
@@ -1644,6 +1652,12 @@ public class Configurador extends javax.swing.JFrame {
 
         jPanel1.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 170, -1));
 
+        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("TechNexus 2024 ®");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, 40));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1240, 770));
 
         pack();
@@ -1930,7 +1944,13 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaseDayActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1947,11 +1967,23 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_icono5MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void btn_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarMouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_btn_guardarMouseClicked
 
     private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
@@ -2145,6 +2177,7 @@ public class Configurador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

@@ -100,8 +100,8 @@ public class ComputerCompany {
                 this.getEnsamblador()[i].start();
             }
         }
-        //this.getProjectManagerInstance().start();  CAMBIAR CON LO DE NICOLA
-        //this.getDirectorInstance().start();   CAMBIAR CON LO DE NICOLA
+        this.getProjectManagerInstance().start();  
+        this.getDirectorInstance().start();   
 
     }
 
@@ -109,7 +109,7 @@ public class ComputerCompany {
     public int countNonNull(Worker[] workers) {
         int count = 0;
         for (Worker worker : workers) {
-            if (workers != null) {
+            if (worker != null) {
                 count++;
             }
         }
