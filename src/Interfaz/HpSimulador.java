@@ -11,11 +11,6 @@ import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -24,7 +19,7 @@ import proyecto1so.mainApp;
 
 /**
  *
- * @author nicolagabrielecolarusso
+ * @author nicolacolarusso
  */
 public class HpSimulador extends javax.swing.JFrame {
 
@@ -108,7 +103,9 @@ public class HpSimulador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         initializeValues();
-          
+
+        
+
 
         this.decreaseBtn[0] = decreasePlacaB;
         this.decreaseBtn[1] = decreaseCpu;
@@ -262,7 +259,10 @@ public class HpSimulador extends javax.swing.JFrame {
     
     
     
-   
+    
+    
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -1494,7 +1494,7 @@ public class HpSimulador extends javax.swing.JFrame {
                             .addGroup(storagePanelLayout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addGroup(storagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(fAlimentStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
+                                    .addComponent(fAlimentStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 241, Short.MAX_VALUE)
                                     .addComponent(RAMStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                     .addComponent(cpuStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                                     .addComponent(placaBStorage, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)

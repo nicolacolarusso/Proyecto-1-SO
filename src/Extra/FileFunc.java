@@ -168,10 +168,10 @@ public class FileFunc {
         int director = apple.getDirector();
         int maxCapacity = apple.getMaxWorkersQuantity();
 
-        data += "ProductorDePlacabase=" + prodPlacaBase + "\n" + "ProductorDeCPUs=" + prodCPUs + "\n" + "ProductorDeMemoriaRAM="
-                + prodMemoriaRAM + "\n" + "ProductorDeFuenteDeAlimentacion=" + prodFuenteAlimentacion + "\n" + "ProductorDeTarjetasGraficas="
+        data += "Productor de placa base=" + prodPlacaBase + "\n" + "Productor de CPUs=" + prodCPUs + "\n" + "Productor de memoria RAM="
+                + prodMemoriaRAM + "\n" + "Productor de fuente de alimentacion=" + prodFuenteAlimentacion + "\n" + "Productor de tarjetas graficas="
                 + prodTarjetaGrafica + "\n" + "Ensambladores=" + ensamblador + "\n" + "ProjectManager=" + projectManager
-                + "\n" + "Director=" + director + "\n" + "MaxCapacidad=" + maxCapacity + "\n\n";
+                + "\n" + "Director=" + director + "\n" + "MaxCapacity=" + maxCapacity + "\n\n";
 
         data += "[Hp]\n";
         //traemos la segunda compania
@@ -186,10 +186,10 @@ public class FileFunc {
         director = hp.getDirector();
         maxCapacity = hp.getMaxWorkersQuantity();
 
-        data += "ProductorDePlacabase=" + prodPlacaBase + "\n" + "ProductorDeCPUs=" + prodCPUs + "\n" + "ProductorDeMemoriaRAM="
-                + prodMemoriaRAM + "\n" + "ProductorDeFuenteDeAlimentacion=" + prodFuenteAlimentacion + "\n" + "ProductorDeTarjetasGraficas="
+        data += "Productor de placa base=" + prodPlacaBase + "\n" + "Productor de CPUs=" + prodCPUs + "\n" + "Productor de memoria RAM="
+                + prodMemoriaRAM + "\n" + "Productor de fuente de alimentacion=" + prodFuenteAlimentacion + "\n" + "Productor de tarjetas graficas="
                 + prodTarjetaGrafica + "\n" + "Ensambladores=" + ensamblador + "\n" + "ProjectManager=" + projectManager
-                + "\n" + "Director=" + director + "\n" + "MaxCapacidad=" + maxCapacity + "\n\n";
+                + "\n" + "Director=" + director + "\n" + "MaxCapacity=" + maxCapacity + "\n\n";
 
         return data;
     }
