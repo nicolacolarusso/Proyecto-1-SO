@@ -4,9 +4,21 @@
  */
 package Interfaz;
 
+import Classes.Worker;
+import Extra.ExtraFunctions;
 import Extra.FileFunc;
+import java.awt.Point;
 import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 import proyecto1so.mainApp;
 
 /**
@@ -14,18 +26,242 @@ import proyecto1so.mainApp;
  * @author nicolagabrielecolarusso
  */
 public class Configurador extends javax.swing.JFrame {
-     private final mainApp app = mainApp.getInstance();
+    private Point initialClick;
+    private final mainApp app = mainApp.getInstance();
+    private int maxEmployees;
+    private int maxEmployees1;
+    private int actualEmployees;
+    private int actualEmployees1;
+    private static Configurador config;
+    private ExtraFunctions helper = new ExtraFunctions();
     private FileFunc filefunctions = new FileFunc();
     private File selectedFile = app.getSelectedFile();
-    /**
-     * Creates new form Configurador
-     */
+    private int dayDuration;
+    private int deadline;
+    
+    private void initializeValues() {
+        if (this.app.getHp() != null && this.app.getApple() != null) {
+            this.maxEmployees = this.app.getApple().getMaxWorkersQuantity();
+            this.maxEmployees1 = this.app.getHp().getMaxWorkersQuantity();
+            this.actualEmployees1 = this.app.getHp().getActualWorkersQuantity();
+            this.actualEmployees = this.app.getApple().getActualWorkersQuantity();
+            this.dayDuration = (int) app.getDayDuration() / 1000;
+            this.deadline = app.getDeadline();
+            this.dayDurationValue.setText(String.valueOf(dayDuration));
+            this.deadlineValue.setText(String.valueOf(deadline));
+
+            this.placaBValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdPlacaBase())));
+            this.cpuValue
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdCPUs())));
+            this.RAMValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getProdMemoriaRAM())));
+            this.fAlimentValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdFuenteAlimentacion())));
+            this.tGraficaValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getProdTarjetaGrafica())));
+            this.assemblerValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getEnsamblador())));
+
+            this.placaBValues1
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdPlacaBase())));
+            this.cpuValue1
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdCPUs())));
+            this.RAMValues1.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getHp().getProdMemoriaRAM())));
+            this.fAlimentValues1
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion())));
+            this.tGraficaValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica())));
+            this.assemblerValues1
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getHp().getEnsamblador())));
+            this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
+            this.maxCap1.setText(String.valueOf(this.maxEmployees1) + "     trabajadores");
+        }
+    }
+
+    private void updateBtnParams() {
+        if (this.dayDuration == 1) {
+            this.decreaseDay.setEnabled(false);
+            this.decreaseDay.setFocusable(false);
+        } else {
+            this.decreaseDay.setEnabled(true);
+            this.decreaseDay.setFocusable(true);
+        }
+
+        if (this.deadline == 1) {
+            this.decreaseDeadline.setEnabled(false);
+            this.decreaseDeadline.setFocusable(false);
+        } else {
+            this.decreaseDeadline.setEnabled(true);
+            this.decreaseDeadline.setFocusable(true);
+        }
+    }
+
+    public static synchronized Configurador getInstance() {
+        if (config == null) {
+            config = new Configurador();
+        }
+        return config;
+    }
+
+    private int countNonNullEmployees(Worker[] employees) {
+        int count = 0;
+        for (Worker employee : employees) {
+            if (employee != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private JButton[] decreaseBtn = new JButton[6];
+    private JButton[] increaseBtn = new JButton[6];
+
+    private int[] values = {
+            countNonNullEmployees(this.app.getApple().getProdPlacaBase()),
+            countNonNullEmployees(this.app.getApple().getProdCPUs()),
+            countNonNullEmployees(this.app.getApple().getProdMemoriaRAM()),
+            countNonNullEmployees(this.app.getApple().getProdFuenteAlimentacion()),
+            countNonNullEmployees(this.app.getApple().getProdTarjetaGrafica()),
+            countNonNullEmployees(this.app.getApple().getEnsamblador())
+    };
+
+    private JButton[] decreaseBtn1 = new JButton[6];
+    private JButton[] increaseBtn1 = new JButton[6];
+
+    private int[] values1 = {
+            countNonNullEmployees(this.app.getHp().getProdPlacaBase()),
+            countNonNullEmployees(this.app.getHp().getProdCPUs()),
+            countNonNullEmployees(this.app.getHp().getProdMemoriaRAM()),
+            countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion()),
+            countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica()),
+            countNonNullEmployees(this.app.getHp().getEnsamblador())
+    };
+
+    private void updateBtnStatus() {
+        updateValues();
+
+        if (this.actualEmployees == this.maxEmployees) {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(false);
+                btn.setFocusable(false);
+            }
+        } else {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(true);
+                btn.setFocusable(true);
+            }
+        }
+
+        for (int i = 0; i < this.values.length; i++) {
+            if (this.values[i] == 1) {
+                this.decreaseBtn[i].setEnabled(false);
+                this.decreaseBtn[i].setFocusable(false);
+            } else {
+                this.decreaseBtn[i].setEnabled(true);
+                this.decreaseBtn[i].setFocusable(true);
+
+            }
+        }
+    }
+
+    private void updateBtnStatus1() {
+        updateValues1();
+
+        if (this.actualEmployees1 == this.maxEmployees1) {
+            for (JButton btn : increaseBtn1) {
+                btn.setEnabled(false);
+                btn.setFocusable(false);
+            }
+        } else {
+            for (JButton btn : increaseBtn1) {
+                btn.setEnabled(true);
+                btn.setFocusable(true);
+            }
+        }
+
+        for (int i = 0; i < this.values1.length; i++) {
+            if (this.values1[i] == 1) {
+                this.decreaseBtn1[i].setEnabled(false);
+                this.decreaseBtn1[i].setFocusable(false);
+            } else {
+                this.decreaseBtn1[i].setEnabled(true);
+                this.decreaseBtn1[i].setFocusable(true);
+
+            }
+        }
+    }
+
+    
+    private void updateValues() {
+        values[0] = countNonNullEmployees(this.app.getApple().getProdPlacaBase());
+        values[1] = countNonNullEmployees(this.app.getApple().getProdCPUs());
+        values[2] = countNonNullEmployees(this.app.getApple().getProdMemoriaRAM());
+        values[3] = countNonNullEmployees(this.app.getApple().getProdFuenteAlimentacion());
+        values[4] = countNonNullEmployees(this.app.getApple().getProdTarjetaGrafica());
+        values[5] = countNonNullEmployees(this.app.getApple().getEnsamblador());
+    }
+
+    private void updateValues1() {
+        values[0] = countNonNullEmployees(this.app.getHp().getProdPlacaBase());
+        values[1] = countNonNullEmployees(this.app.getHp().getProdCPUs());
+        values[2] = countNonNullEmployees(this.app.getHp().getProdMemoriaRAM());
+        values[3] = countNonNullEmployees(this.app.getHp().getProdFuenteAlimentacion());
+        values[4] = countNonNullEmployees(this.app.getHp().getProdTarjetaGrafica());
+        values[5] = countNonNullEmployees(this.app.getHp().getEnsamblador());
+    }
+
     public Configurador() {
+        try {
+            // Código para el Look and Feel
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
-        this.setSize(1209, 808);
+        this.setResizable(false);
+        initializeValues();
+        updateBtnParams();
+
+        this.decreaseBtn1[0] = decreasePlacaB1;
+        this.decreaseBtn1[1] = decreaseCpu1;
+        this.decreaseBtn1[2] = decreaseRAM1;
+        this.decreaseBtn1[3] = decreaseFAliment1;
+        this.decreaseBtn1[4] = decreaceTGrafica1;
+        this.decreaseBtn1[5] = decreaceAssembler1;
+        this.increaseBtn1[0] = increasePlacaB1;
+        this.increaseBtn1[1] = increaseCpu1;
+        this.increaseBtn1[2] = increaseRAM1;
+        this.increaseBtn1[3] = increaseFAliment1;
+        this.increaseBtn1[4] = increaseTGrafica1;
+        this.increaseBtn1[5] = increaseAssembler1;
+        updateBtnStatus1();
+
+        this.decreaseBtn[0] = decreasePlacaB;
+        this.decreaseBtn[1] = decreaseCpu;
+        this.decreaseBtn[2] = decreaseRAM;
+        this.decreaseBtn[3] = decreaseFAliment;
+        this.decreaseBtn[4] = decreaceTGrafica;
+        this.decreaseBtn[5] = decreaceAssembler;
+
+        this.increaseBtn[0] = increasePlacaB;
+        this.increaseBtn[1] = increaseCpu;
+        this.increaseBtn[2] = increaseRAM;
+        this.increaseBtn[3] = increaseFAliment;
+        this.increaseBtn[4] = increaseTGrafica;
+        this.increaseBtn[5] = increaseAssembler;
+
+        updateBtnStatus();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -142,9 +378,7 @@ public class Configurador extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1209, 808));
         setMinimumSize(new java.awt.Dimension(1209, 808));
-        setPreferredSize(new java.awt.Dimension(1209, 808));
         setSize(new java.awt.Dimension(1209, 808));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -212,7 +446,7 @@ public class Configurador extends javax.swing.JFrame {
             diasEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diasEntregaLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(diasEntregaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addComponent(diasEntregaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(decreaseDeadline)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -288,7 +522,7 @@ public class Configurador extends javax.swing.JFrame {
             duracionDiasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(duracionDiasLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(duracionDiasTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+                .addComponent(duracionDiasTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(decreaseDay)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -326,9 +560,9 @@ public class Configurador extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(51, 51, 51)
                 .addComponent(duracionDias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addGap(82, 82, 82)
                 .addComponent(diasEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,7 +579,7 @@ public class Configurador extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 980, 80));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 1040, 80));
 
         titulo.setFont(new java.awt.Font("Arial Black", 1, 60)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -359,7 +593,7 @@ public class Configurador extends javax.swing.JFrame {
 
         placaBaseTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         placaBaseTitle.setForeground(new java.awt.Color(51, 51, 51));
-        placaBaseTitle.setText("Guionistas:");
+        placaBaseTitle.setText("Prod. Placa Base:");
 
         increasePlacaB.setBackground(new java.awt.Color(51, 51, 51));
         increasePlacaB.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -432,7 +666,7 @@ public class Configurador extends javax.swing.JFrame {
 
         cpuTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         cpuTitle.setForeground(new java.awt.Color(51, 51, 51));
-        cpuTitle.setText("Escenarios:");
+        cpuTitle.setText("Prod. Cpus:");
 
         cpuValue.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         cpuValue.setForeground(new java.awt.Color(51, 51, 51));
@@ -508,7 +742,7 @@ public class Configurador extends javax.swing.JFrame {
 
         memoriaRAMTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         memoriaRAMTitle.setForeground(new java.awt.Color(51, 51, 51));
-        memoriaRAMTitle.setText("Animador:");
+        memoriaRAMTitle.setText("Prod. Memoria RAM:");
 
         RAMValues.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         RAMValues.setForeground(new java.awt.Color(51, 51, 51));
@@ -583,7 +817,7 @@ public class Configurador extends javax.swing.JFrame {
 
         fAlimentTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         fAlimentTitle.setForeground(new java.awt.Color(51, 51, 51));
-        fAlimentTitle.setText("Doblaje:");
+        fAlimentTitle.setText("Prod. F. Alimenta...");
 
         decreaseFAliment.setBackground(new java.awt.Color(51, 51, 51));
         decreaseFAliment.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -658,7 +892,7 @@ public class Configurador extends javax.swing.JFrame {
 
         tGraficaTitle.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         tGraficaTitle.setForeground(new java.awt.Color(51, 51, 51));
-        tGraficaTitle.setText("PlotTwist:");
+        tGraficaTitle.setText("Prod. T. Gráfica:");
 
         increaseTGrafica.setBackground(new java.awt.Color(51, 51, 51));
         increaseTGrafica.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -862,7 +1096,7 @@ public class Configurador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
+        jPanel1.add(workersConfigurations, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 220, -1, -1));
 
         workersConfigurations1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -871,7 +1105,7 @@ public class Configurador extends javax.swing.JFrame {
 
         placaBaseTitle1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         placaBaseTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        placaBaseTitle1.setText("Guionistas:");
+        placaBaseTitle1.setText("Prod. Placa Base:");
 
         increasePlacaB1.setBackground(new java.awt.Color(51, 51, 51));
         increasePlacaB1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -922,7 +1156,7 @@ public class Configurador extends javax.swing.JFrame {
             .addGroup(placaB1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(placaBaseTitle1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(36, 36, 36)
+                .addGap(27, 27, 27)
                 .addComponent(decreasePlacaB1)
                 .addGap(18, 18, 18)
                 .addComponent(placaBValues1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -944,7 +1178,7 @@ public class Configurador extends javax.swing.JFrame {
 
         cpuTitle1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         cpuTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        cpuTitle1.setText("Escenarios:");
+        cpuTitle1.setText("Prod. Cpus:");
 
         cpuValue1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         cpuValue1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1020,7 +1254,7 @@ public class Configurador extends javax.swing.JFrame {
 
         memoriaRAMTitle1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         memoriaRAMTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        memoriaRAMTitle1.setText("Animador:");
+        memoriaRAMTitle1.setText("Prod. Memoria RAM:");
 
         RAMValues1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         RAMValues1.setForeground(new java.awt.Color(51, 51, 51));
@@ -1095,7 +1329,7 @@ public class Configurador extends javax.swing.JFrame {
 
         fAlimentTitle1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         fAlimentTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        fAlimentTitle1.setText("Doblaje:");
+        fAlimentTitle1.setText("Prod. F. Alimenta...");
 
         decreaseFAliment1.setBackground(new java.awt.Color(51, 51, 51));
         decreaseFAliment1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1170,7 +1404,7 @@ public class Configurador extends javax.swing.JFrame {
 
         tGraficaTitle1.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         tGraficaTitle1.setForeground(new java.awt.Color(51, 51, 51));
-        tGraficaTitle1.setText("PlotTwist:");
+        tGraficaTitle1.setText("Prod. T. Gráfica:");
 
         increaseTGrafica1.setBackground(new java.awt.Color(51, 51, 51));
         increaseTGrafica1.setFont(new java.awt.Font("Montserrat", 1, 18)); // NOI18N
@@ -1371,13 +1605,13 @@ public class Configurador extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(workersConfigurations1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, -1, -1));
+        jPanel1.add(workersConfigurations1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Captura de pantalla 2024-10-09 174126.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 450, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 450, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Captura de pantalla 2024-10-07 204326.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 370, 260));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 200, 370, 260));
 
         exit.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         exit.setForeground(new java.awt.Color(255, 255, 255));
@@ -1664,7 +1898,11 @@ public class Configurador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void increasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlacaBMouseClicked
-        // TODO add your handling code here:
+        if (this.canIncreaseQuantity(0)) {
+            this.placaBValues.setText(increaseQuantity(this.placaBValues.getText(), increasePlacaB));
+            helper.agregarTrabajador(0, 0);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increasePlacaBMouseClicked
 
     private void increasePlacaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlacaBActionPerformed
@@ -1676,7 +1914,12 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_placaBValuesActionPerformed
 
     private void decreasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreasePlacaBMouseClicked
-        // TODO add your handling code here:
+        updateValues();
+        if (canDecreaseQuantity(0)) {
+            this.placaBValues.setText(decreaseQuantity(this.placaBValues.getText(), this.decreasePlacaB));
+            helper.eliminarTrabajador(0, 0);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreasePlacaBMouseClicked
 
     private void decreasePlacaBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreasePlacaBActionPerformed
@@ -1688,7 +1931,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_cpuValueActionPerformed
 
     private void increaseCpuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseCpuMouseClicked
-        // TODO add your handling code here:
+         if (canIncreaseQuantity(1)) {
+            this.cpuValue.setText(increaseQuantity(this.cpuValue.getText(), increaseCpu));
+            helper.agregarTrabajador(0, 1);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseCpuMouseClicked
 
     private void increaseCpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseCpuActionPerformed
@@ -1696,7 +1943,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseCpuActionPerformed
 
     private void decreaseCpuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseCpuMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(1)) {
+            this.cpuValue.setText(decreaseQuantity(this.cpuValue.getText(), decreaseCpu));
+            helper.eliminarTrabajador(0, 1);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaseCpuMouseClicked
 
     private void decreaseCpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseCpuActionPerformed
@@ -1708,7 +1959,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_RAMValuesActionPerformed
 
     private void decreaseRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseRAMMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(2)) {
+            this.RAMValues.setText(decreaseQuantity(this.RAMValues.getText(), decreaseRAM));
+            helper.eliminarTrabajador(0, 2);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaseRAMMouseClicked
 
     private void decreaseRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseRAMActionPerformed
@@ -1716,7 +1971,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaseRAMActionPerformed
 
     private void increaseRAMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseRAMMouseClicked
-        // TODO add your handling code here:
+         if (canIncreaseQuantity(2)) {
+            this.RAMValues.setText(increaseQuantity(this.RAMValues.getText(), increaseRAM));
+            helper.agregarTrabajador(0, 2);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseRAMMouseClicked
 
     private void increaseRAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseRAMActionPerformed
@@ -1724,7 +1983,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseRAMActionPerformed
 
     private void decreaseFAlimentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseFAlimentMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(3)) {
+            this.fAlimentValues.setText(decreaseQuantity(this.fAlimentValues.getText(), decreaseFAliment));
+            helper.eliminarTrabajador(0, 3);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaseFAlimentMouseClicked
 
     private void decreaseFAlimentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseFAlimentActionPerformed
@@ -1736,7 +1999,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_fAlimentValuesActionPerformed
 
     private void increaseFAlimentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseFAlimentMouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity(3)) {
+            this.fAlimentValues.setText(increaseQuantity(this.fAlimentValues.getText(), increaseFAliment));
+            helper.agregarTrabajador(0, 3);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseFAlimentMouseClicked
 
     private void increaseFAlimentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseFAlimentActionPerformed
@@ -1744,7 +2011,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseFAlimentActionPerformed
 
     private void increaseTGraficaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseTGraficaMouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity(4)) {
+            this.tGraficaValues.setText(increaseQuantity(this.tGraficaValues.getText(), increaseTGrafica));
+            helper.agregarTrabajador(0, 4);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseTGraficaMouseClicked
 
     private void increaseTGraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseTGraficaActionPerformed
@@ -1756,7 +2027,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_tGraficaValuesActionPerformed
 
     private void decreaceTGraficaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceTGraficaMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(4)) {
+            this.tGraficaValues.setText(decreaseQuantity(this.tGraficaValues.getText(), decreaceTGrafica));
+            helper.eliminarTrabajador(0, 4);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaceTGraficaMouseClicked
 
     private void decreaceTGraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceTGraficaActionPerformed
@@ -1764,7 +2039,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaceTGraficaActionPerformed
 
     private void increaseAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssemblerMouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity(5)) {
+            this.assemblerValues.setText(increaseQuantity(this.assemblerValues.getText(), increaseAssembler));
+            helper.agregarTrabajador(0, 5);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_increaseAssemblerMouseClicked
 
     private void increaseAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAssemblerActionPerformed
@@ -1776,7 +2055,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_assemblerValuesActionPerformed
 
     private void decreaceAssemblerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssemblerMouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity(5)) {
+            this.assemblerValues.setText(decreaseQuantity(this.assemblerValues.getText(), decreaceAssembler));
+            helper.eliminarTrabajador(0, 5);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreaceAssemblerMouseClicked
 
     private void decreaceAssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceAssemblerActionPerformed
@@ -1784,7 +2067,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaceAssemblerActionPerformed
 
     private void increasePlacaB1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlacaB1MouseClicked
-        // TODO add your handling code here:
+        if (this.canIncreaseQuantity1(0)) {
+            this.placaBValues1.setText(increaseQuantity1(this.placaBValues1.getText(), increasePlacaB1));
+            helper.agregarTrabajador(1, 0);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_increasePlacaB1MouseClicked
 
     private void increasePlacaB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increasePlacaB1ActionPerformed
@@ -1796,7 +2083,12 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_placaBValues1ActionPerformed
 
     private void decreasePlacaB1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreasePlacaB1MouseClicked
-        // TODO add your handling code here:
+        updateValues1();
+        if (canDecreaseQuantity1(0)) {
+            this.placaBValues1.setText(decreaseQuantity1(this.placaBValues1.getText(), this.decreasePlacaB1));
+            helper.eliminarTrabajador(1, 0);
+        }
+        updateBtnStatus();
     }//GEN-LAST:event_decreasePlacaB1MouseClicked
 
     private void decreasePlacaB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreasePlacaB1ActionPerformed
@@ -1808,7 +2100,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_cpuValue1ActionPerformed
 
     private void increaseCpu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseCpu1MouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity1(1)) {
+            this.cpuValue1.setText(increaseQuantity1(this.cpuValue1.getText(), increaseCpu1));
+            helper.agregarTrabajador(1, 1);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_increaseCpu1MouseClicked
 
     private void increaseCpu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseCpu1ActionPerformed
@@ -1816,7 +2112,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseCpu1ActionPerformed
 
     private void decreaseCpu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseCpu1MouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity1(1)) {
+            this.cpuValue1.setText(decreaseQuantity1(this.cpuValue1.getText(), decreaseCpu1));
+            helper.eliminarTrabajador(1, 1);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_decreaseCpu1MouseClicked
 
     private void decreaseCpu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseCpu1ActionPerformed
@@ -1828,7 +2128,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_RAMValues1ActionPerformed
 
     private void decreaseRAM1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseRAM1MouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity1(2)) {
+            this.RAMValues1.setText(decreaseQuantity1(this.RAMValues1.getText(), decreaseRAM1));
+            helper.eliminarTrabajador(1, 2);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_decreaseRAM1MouseClicked
 
     private void decreaseRAM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseRAM1ActionPerformed
@@ -1836,7 +2140,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaseRAM1ActionPerformed
 
     private void increaseRAM1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseRAM1MouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity1(2)) {
+            this.RAMValues1.setText(increaseQuantity1(this.RAMValues1.getText(), increaseRAM1));
+            helper.agregarTrabajador(1, 2);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_increaseRAM1MouseClicked
 
     private void increaseRAM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseRAM1ActionPerformed
@@ -1844,7 +2152,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseRAM1ActionPerformed
 
     private void decreaseFAliment1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseFAliment1MouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity1(3)) {
+            this.fAlimentValues1.setText(decreaseQuantity1(this.fAlimentValues1.getText(), decreaseFAliment1));
+            helper.eliminarTrabajador(1, 3);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_decreaseFAliment1MouseClicked
 
     private void decreaseFAliment1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseFAliment1ActionPerformed
@@ -1856,7 +2168,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_fAlimentValues1ActionPerformed
 
     private void increaseFAliment1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseFAliment1MouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity1(3)) {
+            this.fAlimentValues1.setText(increaseQuantity1(this.fAlimentValues1.getText(), increaseFAliment1));
+            helper.agregarTrabajador(1, 3);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_increaseFAliment1MouseClicked
 
     private void increaseFAliment1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseFAliment1ActionPerformed
@@ -1864,7 +2180,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_increaseFAliment1ActionPerformed
 
     private void increaseTGrafica1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseTGrafica1MouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity1(4)) {
+            this.tGraficaValues1.setText(increaseQuantity1(this.tGraficaValues1.getText(), increaseTGrafica1));
+            helper.agregarTrabajador(1, 4);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_increaseTGrafica1MouseClicked
 
     private void increaseTGrafica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseTGrafica1ActionPerformed
@@ -1876,7 +2196,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_tGraficaValues1ActionPerformed
 
     private void decreaceTGrafica1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceTGrafica1MouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity1(4)) {
+            this.tGraficaValues1.setText(decreaseQuantity1(this.tGraficaValues1.getText(), decreaceTGrafica1));
+            helper.eliminarTrabajador(1, 4);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_decreaceTGrafica1MouseClicked
 
     private void decreaceTGrafica1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceTGrafica1ActionPerformed
@@ -1884,7 +2208,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaceTGrafica1ActionPerformed
 
     private void increaseAssembler1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseAssembler1MouseClicked
-        // TODO add your handling code here:
+        if (canIncreaseQuantity1(5)) {
+            this.assemblerValues1.setText(increaseQuantity1(this.assemblerValues1.getText(), increaseAssembler1));
+            helper.agregarTrabajador(1, 5);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_increaseAssembler1MouseClicked
 
     private void increaseAssembler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseAssembler1ActionPerformed
@@ -1896,7 +2224,11 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_assemblerValues1ActionPerformed
 
     private void decreaceAssembler1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaceAssembler1MouseClicked
-        // TODO add your handling code here:
+        if (canDecreaseQuantity1(5)) {
+            this.assemblerValues1.setText(decreaseQuantity1(this.assemblerValues1.getText(), decreaceAssembler1));
+            helper.eliminarTrabajador(1, 5);
+        }
+        updateBtnStatus1();
     }//GEN-LAST:event_decreaceAssembler1MouseClicked
 
     private void decreaceAssembler1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaceAssembler1ActionPerformed
@@ -1904,7 +2236,10 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaceAssembler1ActionPerformed
 
     private void increaseDeadlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDeadlineMouseClicked
-        // TODO add your handling code here:
+        this.deadline += 1;
+        app.setDeadline(deadline);
+        this.deadlineValue.setText(String.valueOf(app.getDeadline()));
+        this.updateBtnParams();
     }//GEN-LAST:event_increaseDeadlineMouseClicked
 
     private void increaseDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDeadlineActionPerformed
@@ -1916,7 +2251,12 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_deadlineValueActionPerformed
 
     private void decreaseDeadlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDeadlineMouseClicked
-        // TODO add your handling code here:
+        if (this.canDecreaseDeadline()) {
+            this.deadline -= 1;
+            app.setDeadline(deadline);
+            this.deadlineValue.setText(String.valueOf(app.getDeadline()));
+        }
+        updateBtnParams();
     }//GEN-LAST:event_decreaseDeadlineMouseClicked
 
     private void decreaseDeadlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDeadlineActionPerformed
@@ -1924,7 +2264,10 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_decreaseDeadlineActionPerformed
 
     private void increaseDayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increaseDayMouseClicked
-        // TODO add your handling code here:
+        this.dayDuration += 1;
+        app.setDayDuration(dayDuration * 1000);
+        this.dayDurationValue.setText(String.valueOf(app.getDayDuration() / 1000));
+        this.updateBtnParams();
     }//GEN-LAST:event_increaseDayMouseClicked
 
     private void increaseDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_increaseDayActionPerformed
@@ -1936,7 +2279,12 @@ public class Configurador extends javax.swing.JFrame {
     }//GEN-LAST:event_dayDurationValueActionPerformed
 
     private void decreaseDayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decreaseDayMouseClicked
-        // TODO add your handling code here:
+        if (this.canDecreaseDay()) {
+            this.dayDuration -= 1;
+            app.setDayDuration(dayDuration * 1000);
+            this.dayDurationValue.setText(String.valueOf(app.getDayDuration() / 1000));
+        }
+        this.updateBtnParams();
     }//GEN-LAST:event_decreaseDayMouseClicked
 
     private void decreaseDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decreaseDayActionPerformed
@@ -2065,6 +2413,98 @@ public class Configurador extends javax.swing.JFrame {
         home.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_InicioMouseClicked
+
+    private boolean canDecreaseDay() {
+        return this.dayDuration > 1;
+    }
+
+    private boolean canDecreaseDeadline() {
+        return this.deadline > 1;
+    }
+
+    private String increaseQuantity(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (actualEmployees < maxEmployees) {
+                intValue++;
+                actualEmployees++;
+            }
+            return String.valueOf(intValue);
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+            return actualValue; // Retorna el valor actual en caso de error
+        }
+    }
+
+    private String decreaseQuantity(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (intValue > 1) {
+                intValue--;
+                actualEmployees--;
+                return String.valueOf(intValue);
+            } else {
+                return String.valueOf(intValue);
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+        }
+        return null;
+    }
+
+    private boolean canDecreaseQuantity(int type) {
+        updateValues();
+        return values[type] > 1;
+    }
+
+    private boolean canIncreaseQuantity(int type) {
+        updateValues();
+        return actualEmployees < maxEmployees;
+    }
+
+    private String increaseQuantity1(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (actualEmployees1 < maxEmployees1) {
+                intValue++;
+                actualEmployees1++;
+            }
+            return String.valueOf(intValue);
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+            return actualValue; // Retorna el valor actual en caso de error
+        }
+    }
+
+    private String decreaseQuantity1(String actualValue, JButton btn) {
+        int intValue = 0;
+        try {
+            intValue = Integer.parseInt(actualValue);
+            if (intValue > 1) {
+                intValue--;
+                actualEmployees1--;
+                return String.valueOf(intValue);
+            } else {
+                return String.valueOf(intValue);
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("Error al convertir el valor a int: " + e.getMessage());
+        }
+        return null;
+    }
+
+    private boolean canDecreaseQuantity1(int type) {
+        updateValues1();
+        return values1[type] > 1;
+    }
+
+    private boolean canIncreaseQuantity1(int type) {
+        updateValues1();
+        return actualEmployees1 < maxEmployees1;
+    }
 
     /**
      * @param args the command line arguments
