@@ -38,11 +38,11 @@ public class mainApp {
     }
 
     public void start() {
-        /*ExtraFunctions.cargarParametros();
+        ExtraFunctions.cargarParametros();
         //Inicia la simulacion
         getApple().start();
         getHp().start();
-        //chartManager = new ChartManager();]*/
+        //chartManager = new ChartManager();]
         AppleHp apple = new AppleHp();
         apple.setVisible(true);
     }

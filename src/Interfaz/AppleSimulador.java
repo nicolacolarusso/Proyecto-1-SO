@@ -4,22 +4,276 @@
  */
 package Interfaz;
 
-import static Interfaz.HpSimulador.apple;
+import Classes.Worker;
+import Extra.ExtraFunctions;
+import Extra.FileFunc;
+import java.awt.Point;
+import java.io.File;
+import javax.swing.JButton;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import proyecto1so.mainApp;
+
 
 /**
  *
- * @author diego
+ * @author nicolacolarusso
  */
 public class AppleSimulador extends javax.swing.JFrame {
-    public static AppleHp apple;
-    /**
-     * Creates new form AppleSimulador
-     */
+    
+    
+    
+    
+    private Point initialClick;
+    private final mainApp app = mainApp.getInstance();
+    private int maxEmployees;
+    private int actualEmployees;
+    private static AppleSimulador apple;
+    private ExtraFunctions helper = new ExtraFunctions();
+    private FileFunc filefunctions = new FileFunc();
+    private File selectedFile = app.getSelectedFile();
+    private JButton[] decreaseBtn = new JButton[6];
+    private JButton[] increaseBtn = new JButton[6];
+    private int[] values = {
+        countNonNullEmployees(this.app.getApple().getProdPlacaBase()),
+        countNonNullEmployees(this.app.getApple().getProdCPUs()),
+        countNonNullEmployees(this.app.getApple().getProdMemoriaRAM()),
+        countNonNullEmployees(this.app.getApple().getProdFuenteAlimentacion()),
+        countNonNullEmployees(this.app.getApple().getProdTarjetaGrafica()),
+        countNonNullEmployees(this.app.getApple().getEnsamblador())
+    };
+
+    private void updateBtnStatus() {
+        updateValues();
+
+        if (this.actualEmployees == this.maxEmployees) {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(false);
+                btn.setFocusable(false);
+            }
+        } else {
+            for (JButton btn : increaseBtn) {
+                btn.setEnabled(true);
+                btn.setFocusable(true);
+            }
+        }
+
+        for (int i = 0; i < this.values.length; i++) {
+            if (this.values[i] == 1) {
+                this.decreaseBtn[i].setEnabled(false);
+                this.decreaseBtn[i].setFocusable(false);
+            } else {
+                this.decreaseBtn[i].setEnabled(true);
+                this.decreaseBtn[i].setFocusable(true);
+
+            }
+        }
+    }
+
+    private void updateValues() {
+        values[0] = countNonNullEmployees(this.app.getApple().getProdPlacaBase());
+        values[1] = countNonNullEmployees(this.app.getApple().getProdCPUs());
+        values[2] = countNonNullEmployees(this.app.getApple().getProdMemoriaRAM());
+        values[3] = countNonNullEmployees(this.app.getApple().getProdFuenteAlimentacion());
+        values[4] = countNonNullEmployees(this.app.getApple().getProdTarjetaGrafica());
+        values[5] = countNonNullEmployees(this.app.getApple().getEnsamblador());
+    }
+
+    public static synchronized AppleSimulador getInstance() {
+        if (apple == null) {
+            apple = new AppleSimulador();
+        }
+        return apple;
+    }
+
     public AppleSimulador() {
+        try {
+            // Código para el Look and Feel
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        this.setResizable(false);
+        initializeValues();
+
+        
+
+
+        this.decreaseBtn[0] = decreasePlacaB;
+        this.decreaseBtn[1] = decreaseCpu;
+        this.decreaseBtn[2] = decreaseRAM;
+        this.decreaseBtn[3] = decreaseFAliment;
+        this.decreaseBtn[4] = decreaceTGrafica;
+        this.decreaseBtn[5] = decreaceAssembler;
+        this.increaseBtn[0] = increasePlacaB;
+        this.increaseBtn[1] = increaseCpu;
+        this.increaseBtn[2] = increaseRAM;
+        this.increaseBtn[3] = increaseFAliment;
+        this.increaseBtn[4] = increaseTGrafica;
+        this.increaseBtn[5] = increaseAssembler;
+
+        updateBtnStatus();
+        this.start();
+
     }
+
+    //
+    private void start() {
+        // Crear un nuevo hilo para el bucle infinito
+        Thread updateThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        // Ejecutar las actualizaciones de la UI en el EDT
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Aquí van tus actualizaciones de la UI
+                                placaBValueStorage
+                                        .setText(String.valueOf(app.getApple().getStorage().getSaved()[0]));
+                                cpuValueStorage
+                                        .setText(String.valueOf(app.getApple().getStorage().getSaved()[1]));
+                                RAMValueStorage
+                                        .setText(String.valueOf(app.getApple().getStorage().getSaved()[2]));
+                                fAlimentValueStorage
+                                        .setText(String.valueOf(app.getApple().getStorage().getSaved()[3]));
+                                tGraficaValueStorage
+                                        .setText(String.valueOf(app.getApple().getStorage().getSaved()[4]));
+                                assemblerValueStorage
+                                        .setText(String.valueOf(app.getApple().getStorage().getSaved()[5]));
+
+                                projectManagerStatus
+                                        .setText(app.getApple().getProjectManagerInstance().getCurrentState());
+
+                                currentDeadline.setText(
+                                        String.valueOf(app.getApple().getRemainingDays()));
+
+                                totalDays.setText(String.valueOf(app.getApple().getTotalDays()));
+
+                                strikeCounter.setText(String
+                                        .valueOf(app.getApple().getProjectManagerInstance().getStrikes()));
+                                cashPenality.setText(String.valueOf(Integer.parseInt(strikeCounter.getText()) * 100));
+                                directorStatus.setText(app.getApple().getDirectorInstance().getEstado());
+
+                                
+                                
+                                
+                                
+                                totalComp.setText(
+                                        String.valueOf(app.getApple().getNumComputers()));
+                                basicCompTotal.setText(
+                                        String.valueOf(app.getApple().getNumBasicComputers()));
+
+                                tGraficaCompTotal.setText(
+                                        String.valueOf(app.getApple().getNumGraphicCardsComputers()));
+
+                                basicComp.setText(
+                                        String.valueOf(app.getApple().getActualNumBasicComputers())
+                                );
+                                tGraficaComp.setText(
+                                        String.valueOf(app.getApple().getActualNumGraphicCardsComputers())
+                                );
+
+                                basicCompLast.setText(
+                                        String.valueOf(app.getApple().getLastNumBasicComputers())
+                                );
+                                tGraficaCompLast.setText(
+                                        String.valueOf(app.getApple().getLastNumGraphicCardsComputers())
+                                );
+
+                                profit.setText(formatNumberAsK((int) app.getApple().getEarning() -  (int) app.getApple().getTotalCost()));
+                                cost.setText(formatNumberAsK((int) app.getApple().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getApple().getEarning()));
+                                batchLastProfit.setText(
+                                        formatNumberAsK((int) app.getApple().getBatchLastProfit()));
+                            }
+                        });
+
+                        // Pausar el hilo separado, no el EDT
+                        Thread.sleep(app.getDayDuration() / 48);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Iniciar el hilo
+        updateThread.start();
+    }
+
+    private void initializeValues() {
+        if (this.app.getApple() != null) {
+            this.maxEmployees = this.app.getApple().getMaxWorkersQuantity();
+            this.actualEmployees = this.app.getApple().getActualWorkersQuantity();
+            this.placaBValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdPlacaBase())));
+            this.cpuValue
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdCPUs())));
+            this.RAMValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getProdMemoriaRAM())));
+            this.FAlimentValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getProdFuenteAlimentacion())));
+            this.TGraficaValues.setText(
+                    String.valueOf(countNonNullEmployees(this.app.getApple().getProdTarjetaGrafica())));
+            this.assemblerValues
+                    .setText(String.valueOf(countNonNullEmployees(this.app.getApple().getEnsamblador())));
+            this.maxCap.setText(String.valueOf(this.maxEmployees) + "     trabajadores");
+        }
+    }
+
+    private int countNonNullEmployees(Worker[] workers) {
+        int count = 0;
+        for (Worker workeer : workers) {
+            if (workeer != null) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public String formatNumberAsK(int number) {
+        // Se onverte el número a miles
+        double thousands = number / 1000.0;
+
+        // Se redondea a dos dígitos significativos
+        double rounded = Math.round(thousands * 100.0) / 100.0;
+
+        // Se convierte a cadena y se añade 'K'
+        return rounded + "K";
+    }
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -240,7 +494,7 @@ public class AppleSimulador extends javax.swing.JFrame {
             placaBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(placaBLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(placaBaseTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(placaBaseTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                 .addGap(36, 36, 36)
                 .addComponent(decreasePlacaB)
                 .addGap(18, 18, 18)

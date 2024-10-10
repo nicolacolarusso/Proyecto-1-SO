@@ -183,6 +183,7 @@ public class FileFunc {
         ensamblador = hp.countNonNull(hp.getEnsamblador());
         projectManager = hp.getProjectManager();
         director = hp.getDirector();
+        maxCapacity = hp.getMaxWorkersQuantity();
 
         data += "Productor de placa base=" + prodPlacaBase + "\n" + "Productor de CPUs=" + prodCPUs + "\n" + "Productor de memoria RAM="
                 + prodMemoriaRAM + "\n" + "Productor de fuente de alimentacion=" + prodFuenteAlimentacion + "\n" + "Productor de tarjetas graficas="

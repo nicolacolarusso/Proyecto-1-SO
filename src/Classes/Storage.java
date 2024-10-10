@@ -4,6 +4,8 @@
  */
 package Classes;
 
+import Extra.ExtraData;
+
 /**
  *
  * @author diego
@@ -48,7 +50,7 @@ public class Storage {
     }
     
     //no se si lo vamos a usar pero es la forma que veo de usar los datos que guardamos del enunciadio
-    /*
+ 
     @Override
     public String toString() {
         String str = "Storage Info\n\n";
@@ -60,7 +62,7 @@ public class Storage {
         }
         return str;
     }
-    */
+
     
     //GETTERS AND SETTERS
     public int[] getSaved() {

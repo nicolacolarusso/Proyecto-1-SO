@@ -102,7 +102,7 @@ public class Director extends Worker{
 
                     this.getSemaphore().acquire();
                     // Se envian los capitulos
-                    this.sendChaptersToTV();
+                    this.sendComputers();
 
                     ExtraFunctions.calcularCostoTotal(this.company, this.getAccumulatedSalary());
                     this.setAccumulatedSalary(0);
@@ -152,7 +152,7 @@ public class Director extends Worker{
     }
 
 
-    private void sendChaptersToTV() {
+    private void sendComputers() {
         try {
             this.setEstado("Enviando computadoras");
 

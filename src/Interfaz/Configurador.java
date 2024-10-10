@@ -9,6 +9,11 @@ package Interfaz;
  * @author nicolagabrielecolarusso
  */
 public class Configurador extends javax.swing.JFrame {
+    
+    
+    
+    
+    
     public static AppleHp apple;
     /**
      * Creates new form Configurador
