@@ -4,22 +4,109 @@
  */
 package Interfaz;
 
+import Extra.FileFunc;
+import java.awt.Point;
+import java.io.File;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+import org.jfree.data.xy.XYSeries;
+import proyecto1so.mainApp;
+
 /**
  *
  * @author nicolagabrielecolarusso
  */
 public class Metricas extends javax.swing.JFrame {
-    public static AppleHp apple;
+    
+    
+    private Point initialClick;
+    private final mainApp app = mainApp.getInstance();
+    private XYSeries compApple;
+    private XYSeries compHp;
+    private Timer updateTimer;
+    private static Metricas instance;
+    private FileFunc filefunctions = new FileFunc();
+    private File selectedFile = app.getSelectedFile();
+
     /**
-     * Creates new form Metricas
+     * Obtiene la instancia única de Dashboard. Si no existe, la crea. Si
+     * existe, retorna la existente.
+     *
+     * @return la instancia única de Dashboard.
      */
-    public Metricas(AppleHp apple) {
-        initComponents();
-        this.apple = apple;
-        apple.setVisible(false);
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+    public static synchronized Metricas getInstance() {
+        if (instance == null) {
+            instance = new Metricas();
+        }
+        return instance;
     }
+
+    /**
+     * Constructor privado para prevenir la instanciación.
+     */
+    public Metricas() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        JPanelJChart.setLayout(new java.awt.BorderLayout());
+        JPanelJChart.add(app.getChartManager().getChartPanel(), java.awt.BorderLayout.CENTER);
+        JPanelJChart.validate();
+        this.start();
+    }
+
+    private void start() {
+        // Crear un nuevo hilo para el bucle infinito
+        Thread updateThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        // Ejecutar las actualizaciones de la UI en el EDT
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                profit1.setText(formatNumberAsK((int) app.getHp().getEarning() - (int) app.getApple().getTotalCost()));
+                                cost1.setText(formatNumberAsK((int) app.getHp().getTotalCost()));
+                                earning1.setText(formatNumberAsK((int) app.getHp().getEarning()));
+
+                                profit.setText(formatNumberAsK((int) app.getApple().getEarning() - (int) app.getApple().getTotalCost()));
+                                cost2.setText(formatNumberAsK((int) app.getApple().getTotalCost()));
+                                earning.setText(formatNumberAsK((int) app.getApple().getEarning()));
+
+                                totalDays.setText(String.valueOf(app.getHp().getTotalDays()));
+                                currentDeadline.setText(String.valueOf(app.getHp().getRemainingDays()));
+
+                            }
+                        });
+
+                        // Pausar el hilo separado, no el EDT
+                        Thread.sleep(app.getDayDuration() / 48);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+            }
+        });
+
+        // Iniciar el hilo
+        updateThread.start();
+    }
+
+    public String formatNumberAsK(int number) {
+        // Se onverte el número a miles
+        double thousands = number / 1000.0;
+
+        // Se redondea a dos dígitos significativos
+        double rounded = Math.round(thousands * 100.0) / 100.0;
+
+        // Se convierte a cadena y se añade 'K'
+        return rounded + "K";
+    }
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,22 +124,22 @@ public class Metricas extends javax.swing.JFrame {
         driveTitle12 = new javax.swing.JLabel();
         currentDeadline = new javax.swing.JTextField();
         JPanelJChart = new javax.swing.JPanel();
-        driveTitle10 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        driveTitle15 = new javax.swing.JLabel();
+        cost2 = new javax.swing.JTextField();
         earning = new javax.swing.JTextField();
         profit = new javax.swing.JTextField();
         driveTitle17 = new javax.swing.JLabel();
         driveTitle11 = new javax.swing.JLabel();
-        driveTitle13 = new javax.swing.JLabel();
-        cost1 = new javax.swing.JTextField();
-        driveTitle14 = new javax.swing.JLabel();
-        earning1 = new javax.swing.JTextField();
-        driveTitle18 = new javax.swing.JLabel();
-        profit1 = new javax.swing.JTextField();
-        cost2 = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        driveTitle15 = new javax.swing.JLabel();
+        driveTitle10 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         driveTitle9 = new javax.swing.JLabel();
+        driveTitle14 = new javax.swing.JLabel();
+        driveTitle13 = new javax.swing.JLabel();
+        driveTitle18 = new javax.swing.JLabel();
+        profit1 = new javax.swing.JTextField();
+        earning1 = new javax.swing.JTextField();
+        cost1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btn_guardar = new javax.swing.JPanel();
         icono5 = new javax.swing.JLabel();
@@ -162,11 +249,23 @@ public class Metricas extends javax.swing.JFrame {
 
         panel1.add(JPanelJChart, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 220, 760, 320));
 
-        driveTitle10.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle10.setForeground(new java.awt.Color(255, 255, 255));
-        driveTitle10.setText("Costos operativos:");
-        driveTitle10.setFocusable(false);
-        panel1.add(driveTitle10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 590, -1, -1));
+        jPanel4.setBackground(new java.awt.Color(0, 51, 153));
+
+        driveTitle15.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle15.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle15.setText("HEWLETTE PACKARD\n\n");
+        driveTitle15.setFocusable(false);
+
+        cost2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        cost2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        cost2.setText("0");
+        cost2.setBorder(null);
+        cost2.setFocusable(false);
+        cost2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cost2ActionPerformed(evt);
+            }
+        });
 
         earning.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         earning.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -178,7 +277,6 @@ public class Metricas extends javax.swing.JFrame {
                 earningActionPerformed(evt);
             }
         });
-        panel1.add(earning, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 110, -1));
 
         profit.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         profit.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -195,58 +293,86 @@ public class Metricas extends javax.swing.JFrame {
                 profitActionPerformed(evt);
             }
         });
-        panel1.add(profit, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 650, 110, -1));
 
         driveTitle17.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         driveTitle17.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle17.setText("Ganancia neta:");
         driveTitle17.setFocusable(false);
-        panel1.add(driveTitle17, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 650, -1, -1));
 
         driveTitle11.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         driveTitle11.setForeground(new java.awt.Color(255, 255, 255));
         driveTitle11.setText("Ganancia bruta:");
         driveTitle11.setFocusable(false);
-        panel1.add(driveTitle11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, -1, -1));
 
-        driveTitle13.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle13.setText("Ganancia bruta:");
-        driveTitle13.setFocusable(false);
-        panel1.add(driveTitle13, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 620, -1, -1));
+        driveTitle10.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle10.setForeground(new java.awt.Color(255, 255, 255));
+        driveTitle10.setText("Costos operativos:");
+        driveTitle10.setFocusable(false);
 
-        cost1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        cost1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        cost1.setText("0");
-        cost1.setBorder(null);
-        cost1.setFocusable(false);
-        cost1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cost1ActionPerformed(evt);
-            }
-        });
-        panel1.add(cost1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 590, 100, -1));
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(63, Short.MAX_VALUE)
+                .addComponent(driveTitle15)
+                .addGap(79, 79, 79))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(driveTitle10)
+                        .addGap(16, 16, 16)
+                        .addComponent(cost2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(driveTitle11)
+                        .addGap(42, 42, 42)
+                        .addComponent(earning, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(driveTitle17)
+                        .addGap(49, 49, 49)
+                        .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(driveTitle15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle10)
+                    .addComponent(cost2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle11)
+                    .addComponent(earning, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle17)
+                    .addComponent(profit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+
+        panel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 340, 170));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        driveTitle9.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle9.setText("APPLE");
+        driveTitle9.setFocusable(false);
 
         driveTitle14.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         driveTitle14.setText("Costos operativos:");
         driveTitle14.setFocusable(false);
-        panel1.add(driveTitle14, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 590, -1, -1));
 
-        earning1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        earning1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        earning1.setText("0");
-        earning1.setBorder(null);
-        earning1.setFocusable(false);
-        earning1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                earning1ActionPerformed(evt);
-            }
-        });
-        panel1.add(earning1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 620, 100, -1));
+        driveTitle13.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
+        driveTitle13.setText("Ganancia bruta:");
+        driveTitle13.setFocusable(false);
 
         driveTitle18.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
         driveTitle18.setText("Ganancia neta:");
         driveTitle18.setFocusable(false);
-        panel1.add(driveTitle18, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 650, -1, -1));
 
         profit1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
         profit1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
@@ -258,70 +384,76 @@ public class Metricas extends javax.swing.JFrame {
                 profit1ActionPerformed(evt);
             }
         });
-        panel1.add(profit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 650, 100, -1));
 
-        cost2.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
-        cost2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        cost2.setText("0");
-        cost2.setBorder(null);
-        cost2.setFocusable(false);
-        cost2.addActionListener(new java.awt.event.ActionListener() {
+        earning1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        earning1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        earning1.setText("0");
+        earning1.setBorder(null);
+        earning1.setFocusable(false);
+        earning1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cost2ActionPerformed(evt);
+                earning1ActionPerformed(evt);
             }
         });
-        panel1.add(cost2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 590, 110, -1));
 
-        jPanel4.setBackground(new java.awt.Color(0, 51, 153));
-
-        driveTitle15.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle15.setForeground(new java.awt.Color(255, 255, 255));
-        driveTitle15.setText("HEWLETTE PACKARD\n\n");
-        driveTitle15.setFocusable(false);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addComponent(driveTitle15)
-                .addGap(79, 79, 79))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(driveTitle15)
-                .addContainerGap(92, Short.MAX_VALUE))
-        );
-
-        panel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, 340, 130));
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-
-        driveTitle9.setFont(new java.awt.Font("Arial Black", 1, 16)); // NOI18N
-        driveTitle9.setText("APPLE");
-        driveTitle9.setFocusable(false);
+        cost1.setFont(new java.awt.Font("Montserrat", 1, 16)); // NOI18N
+        cost1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        cost1.setText("0");
+        cost1.setBorder(null);
+        cost1.setFocusable(false);
+        cost1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cost1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(driveTitle9)
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(driveTitle9))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(driveTitle14)
+                                .addGap(16, 16, 16)
+                                .addComponent(cost1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(driveTitle13)
+                                .addGap(42, 42, 42)
+                                .addComponent(earning1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(driveTitle18)
+                                .addGap(49, 49, 49)
+                                .addComponent(profit1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(driveTitle9)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle14)
+                    .addComponent(cost1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle13)
+                    .addComponent(earning1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(driveTitle18)
+                    .addComponent(profit1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        panel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 340, 130));
+        panel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 340, 170));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 60)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -605,7 +737,7 @@ public class Metricas extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("TechNexus 2024 ®");
-        panel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, -1, 40));
+        panel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, -1, 40));
 
         getContentPane().add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1140, 780));
 
@@ -653,11 +785,23 @@ public class Metricas extends javax.swing.JFrame {
     }//GEN-LAST:event_icono5MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void btn_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarMouseClicked
-        // TODO add your handling code here:
+        try {
+            this.filefunctions.write(this.selectedFile);
+            JOptionPane.showMessageDialog(this, "El archivo ha sido guardado exitosamente!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al escribir el archivo");
+        }
     }//GEN-LAST:event_btn_guardarMouseClicked
 
     private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
@@ -716,16 +860,16 @@ public class Metricas extends javax.swing.JFrame {
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void btn_dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dashboardMouseClicked
         // TODO add your handling code here:
-        /*Metricas dashboard = Metricas.getInstance();
+        Metricas dashboard = Metricas.getInstance();
         dashboard.setVisible(true);
-        this.dispose();*/
+        this.dispose();
     }//GEN-LAST:event_btn_dashboardMouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
@@ -775,7 +919,7 @@ public class Metricas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Metricas(apple).setVisible(true);
+                new Metricas().setVisible(true);
             }
         });
     }

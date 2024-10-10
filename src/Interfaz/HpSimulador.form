@@ -195,12 +195,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="maxCap" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="tGrafica" alignment="1" pref="343" max="32767" attributes="0"/>
-                          <Component id="fAliment" alignment="1" pref="343" max="32767" attributes="0"/>
-                          <Component id="RAM" alignment="1" pref="343" max="32767" attributes="0"/>
-                          <Component id="cpu" alignment="1" pref="343" max="32767" attributes="0"/>
+                          <Component id="tGrafica" alignment="1" pref="347" max="32767" attributes="0"/>
+                          <Component id="fAliment" alignment="1" pref="347" max="32767" attributes="0"/>
+                          <Component id="RAM" alignment="1" pref="347" max="32767" attributes="0"/>
+                          <Component id="cpu" alignment="1" pref="347" max="32767" attributes="0"/>
                           <Component id="placaB" alignment="1" max="32767" attributes="0"/>
-                          <Component id="assembler" alignment="0" pref="343" max="32767" attributes="0"/>
+                          <Component id="assembler" alignment="0" pref="347" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -263,7 +263,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Component id="placaBaseTitle" pref="176" max="32767" attributes="0"/>
+                          <Component id="placaBaseTitle" pref="180" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Component id="decreasePlacaB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1892,10 +1892,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="costTitle" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="costTitle" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="earningTitle" max="32767" attributes="0"/>
