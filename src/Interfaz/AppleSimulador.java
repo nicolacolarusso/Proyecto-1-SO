@@ -15,10 +15,8 @@ public class AppleSimulador extends javax.swing.JFrame {
     /**
      * Creates new form AppleSimulador
      */
-    public AppleSimulador(AppleHp apple) {
+    public AppleSimulador() {
         initComponents();
-        this.apple = apple;
-        apple.setVisible(false);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -33,14 +31,7 @@ public class AppleSimulador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        hpLabel = new javax.swing.JLabel();
         titulo = new javax.swing.JLabel();
-        InicioBoton = new javax.swing.JButton();
-        AppleBoton = new javax.swing.JButton();
-        ConfiguracionBoton = new javax.swing.JButton();
-        DashboardBoton = new javax.swing.JButton();
-        GuardarBoton = new javax.swing.JButton();
         workersConfigurations = new javax.swing.JPanel();
         configTrabajTitle2 = new javax.swing.JLabel();
         placaB = new javax.swing.JPanel();
@@ -153,6 +144,25 @@ public class AppleSimulador extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        btn_guardar = new javax.swing.JPanel();
+        icono5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        btn_nuevo_almacen = new javax.swing.JPanel();
+        icono4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        btn_apple = new javax.swing.JPanel();
+        icono3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        btn_hp = new javax.swing.JPanel();
+        icono7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        btn_dashboard = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        btn_Inicio = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        exit = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1170, 830));
@@ -163,94 +173,10 @@ public class AppleSimulador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 204, 0));
-
-        hpLabel.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        hpLabel.setText("Hp");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(hpLabel)
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(hpLabel)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 160, 50));
-
         titulo.setFont(new java.awt.Font("Arial Black", 1, 60)); // NOI18N
         titulo.setForeground(new java.awt.Color(255, 255, 255));
         titulo.setText("Apple");
         jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 30, -1, -1));
-
-        InicioBoton.setBackground(new java.awt.Color(102, 102, 102));
-        InicioBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        InicioBoton.setForeground(new java.awt.Color(255, 255, 255));
-        InicioBoton.setText("Inicio");
-        InicioBoton.setBorder(null);
-        InicioBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InicioBotonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(InicioBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 160, 50));
-
-        AppleBoton.setBackground(new java.awt.Color(102, 102, 102));
-        AppleBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        AppleBoton.setForeground(new java.awt.Color(255, 255, 255));
-        AppleBoton.setText("Apple");
-        AppleBoton.setBorder(null);
-        AppleBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleBotonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(AppleBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 160, 50));
-
-        ConfiguracionBoton.setBackground(new java.awt.Color(102, 102, 102));
-        ConfiguracionBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        ConfiguracionBoton.setForeground(new java.awt.Color(255, 255, 255));
-        ConfiguracionBoton.setText("Configuración");
-        ConfiguracionBoton.setBorder(null);
-        ConfiguracionBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConfiguracionBotonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(ConfiguracionBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 160, 50));
-
-        DashboardBoton.setBackground(new java.awt.Color(102, 102, 102));
-        DashboardBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        DashboardBoton.setForeground(new java.awt.Color(255, 255, 255));
-        DashboardBoton.setText("Dashboard");
-        DashboardBoton.setBorder(null);
-        DashboardBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DashboardBotonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(DashboardBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 160, 50));
-
-        GuardarBoton.setBackground(new java.awt.Color(102, 102, 102));
-        GuardarBoton.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        GuardarBoton.setForeground(new java.awt.Color(255, 255, 255));
-        GuardarBoton.setText("Guardar");
-        GuardarBoton.setBorder(null);
-        GuardarBoton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GuardarBotonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(GuardarBoton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 160, 50));
 
         workersConfigurations.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1751,35 +1677,288 @@ public class AppleSimulador extends javax.swing.JFrame {
         jPanel1.add(slogan, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 720, 630, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mac logo.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 10, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 10, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/macApple.png"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 320, 410, 290));
+
+        btn_guardar.setBackground(new java.awt.Color(102, 102, 102));
+        btn_guardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_guardarMouseClicked(evt);
+            }
+        });
+
+        icono5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        icono5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icono5MouseClicked(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Arial Black", 0, 23)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Guardar");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_guardarLayout = new javax.swing.GroupLayout(btn_guardar);
+        btn_guardar.setLayout(btn_guardarLayout);
+        btn_guardarLayout.setHorizontalGroup(
+            btn_guardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_guardarLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icono5)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        btn_guardarLayout.setVerticalGroup(
+            btn_guardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_guardarLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(btn_guardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(icono5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btn_guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 170, 60));
+
+        btn_nuevo_almacen.setBackground(new java.awt.Color(102, 102, 102));
+        btn_nuevo_almacen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_nuevo_almacenMouseClicked(evt);
+            }
+        });
+
+        icono4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        icono4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icono4MouseClicked(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Arial Black", 0, 23)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Parámetros");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_nuevo_almacenLayout = new javax.swing.GroupLayout(btn_nuevo_almacen);
+        btn_nuevo_almacen.setLayout(btn_nuevo_almacenLayout);
+        btn_nuevo_almacenLayout.setHorizontalGroup(
+            btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_nuevo_almacenLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icono4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btn_nuevo_almacenLayout.setVerticalGroup(
+            btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_nuevo_almacenLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(btn_nuevo_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(icono4, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addGroup(btn_nuevo_almacenLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(0, 7, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btn_nuevo_almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 170, 60));
+
+        btn_apple.setBackground(new java.awt.Color(255, 204, 0));
+        btn_apple.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_appleMouseClicked(evt);
+            }
+        });
+
+        icono3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        icono3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icono3MouseClicked(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Arial Black", 0, 23)); // NOI18N
+        jLabel6.setText("Apple");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_appleLayout = new javax.swing.GroupLayout(btn_apple);
+        btn_apple.setLayout(btn_appleLayout);
+        btn_appleLayout.setHorizontalGroup(
+            btn_appleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_appleLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icono3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btn_appleLayout.setVerticalGroup(
+            btn_appleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_appleLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(btn_appleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(icono3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btn_apple, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 170, 60));
+
+        btn_hp.setBackground(new java.awt.Color(102, 102, 102));
+        btn_hp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_hpMouseClicked(evt);
+            }
+        });
+
+        icono7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        icono7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icono7MouseClicked(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Arial Black", 0, 23)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Hp");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_hpLayout = new javax.swing.GroupLayout(btn_hp);
+        btn_hp.setLayout(btn_hpLayout);
+        btn_hpLayout.setHorizontalGroup(
+            btn_hpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_hpLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(icono7)
+                .addContainerGap(108, Short.MAX_VALUE))
+        );
+        btn_hpLayout.setVerticalGroup(
+            btn_hpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_hpLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(btn_hpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(icono7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btn_hp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 170, 60));
+
+        btn_dashboard.setBackground(new java.awt.Color(102, 102, 102));
+        btn_dashboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_dashboardMouseClicked(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Arial Black", 0, 23)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Dashboard");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_dashboardLayout = new javax.swing.GroupLayout(btn_dashboard);
+        btn_dashboard.setLayout(btn_dashboardLayout);
+        btn_dashboardLayout.setHorizontalGroup(
+            btn_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_dashboardLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        btn_dashboardLayout.setVerticalGroup(
+            btn_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_dashboardLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(btn_dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 12, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btn_dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 170, 60));
+
+        btn_Inicio.setBackground(new java.awt.Color(102, 102, 102));
+        btn_Inicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_InicioMouseClicked(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 23)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Inicio");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btn_InicioLayout = new javax.swing.GroupLayout(btn_Inicio);
+        btn_Inicio.setLayout(btn_InicioLayout);
+        btn_InicioLayout.setHorizontalGroup(
+            btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_InicioLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+        btn_InicioLayout.setVerticalGroup(
+            btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_InicioLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(btn_InicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(btn_Inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 170, -1));
+
+        exit.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
+        exit.setForeground(new java.awt.Color(255, 255, 255));
+        exit.setText("X");
+        exit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                exitMousePressed(evt);
+            }
+        });
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, 20, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 830));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void InicioBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioBotonActionPerformed
-
-    }//GEN-LAST:event_InicioBotonActionPerformed
-
-    private void AppleBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AppleBotonActionPerformed
-
-    private void ConfiguracionBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfiguracionBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ConfiguracionBotonActionPerformed
-
-    private void DashboardBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DashboardBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DashboardBotonActionPerformed
-
-    private void GuardarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarBotonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GuardarBotonActionPerformed
 
     private void increasePlacaBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_increasePlacaBMouseClicked
         // TODO add your handling code here:
@@ -1993,6 +2172,103 @@ public class AppleSimulador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_batchLastProfitActionPerformed
 
+    private void icono5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono5MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_icono5MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void btn_guardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_guardarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_guardarMouseClicked
+
+    private void icono4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_icono4MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+        Configurador configurador = new Configurador();
+        configurador.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void btn_nuevo_almacenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nuevo_almacenMouseClicked
+        // TODO add your handling code here:
+        Configurador configurador = new Configurador();
+        configurador.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_nuevo_almacenMouseClicked
+
+    private void icono3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_icono3MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+        AppleSimulador apple = new AppleSimulador();
+        apple.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void btn_appleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_appleMouseClicked
+        // TODO add your handling code here:
+        AppleSimulador apple = new AppleSimulador();
+        apple.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_appleMouseClicked
+
+    private void icono7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icono7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_icono7MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        HpSimulador hp = new HpSimulador();
+        hp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void btn_hpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_hpMouseClicked
+        // TODO add your handling code here:
+        HpSimulador hp = new HpSimulador();
+        hp.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_hpMouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        /*Metricas dashboard = Metricas.getInstance();
+        dashboard.setVisible(true);
+        this.dispose();*/
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void btn_dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_dashboardMouseClicked
+        // TODO add your handling code here:
+        /*Metricas dashboard = Metricas.getInstance();
+        dashboard.setVisible(true);
+        this.dispose();*/
+    }//GEN-LAST:event_btn_dashboardMouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        AppleHp home = new AppleHp();
+        home.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void btn_InicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_InicioMouseClicked
+        AppleHp home = new AppleHp();
+        home.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_InicioMouseClicked
+
+    private void exitMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitMousePressed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exitMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -2023,18 +2299,13 @@ public class AppleSimulador extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AppleSimulador(apple).setVisible(true);
+                new AppleSimulador().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AppleBoton;
-    private javax.swing.JButton ConfiguracionBoton;
-    private javax.swing.JButton DashboardBoton;
     private javax.swing.JTextField FAlimentValues;
-    private javax.swing.JButton GuardarBoton;
-    private javax.swing.JButton InicioBoton;
     private javax.swing.JPanel PM;
     private javax.swing.JPanel RAM;
     private javax.swing.JLabel RAMLimit1;
@@ -2053,6 +2324,12 @@ public class AppleSimulador extends javax.swing.JFrame {
     private javax.swing.JTextField basicCompLast;
     private javax.swing.JTextField basicCompTotal;
     private javax.swing.JTextField batchLastProfit;
+    private javax.swing.JPanel btn_Inicio;
+    private javax.swing.JPanel btn_apple;
+    private javax.swing.JPanel btn_dashboard;
+    private javax.swing.JPanel btn_guardar;
+    private javax.swing.JPanel btn_hp;
+    private javax.swing.JPanel btn_nuevo_almacen;
     private javax.swing.JTextField cashPenality;
     private javax.swing.JLabel configTrabajTitle;
     private javax.swing.JLabel configTrabajTitle2;
@@ -2096,13 +2373,17 @@ public class AppleSimulador extends javax.swing.JFrame {
     private javax.swing.JLabel driveTitle9;
     private javax.swing.JTextField earning;
     private javax.swing.JLabel earningTitle;
+    private javax.swing.JLabel exit;
     private javax.swing.JPanel fAliment;
     private javax.swing.JLabel fAlimentLimit1;
     private javax.swing.JPanel fAlimentStorage;
     private javax.swing.JLabel fAlimentTitle;
     private javax.swing.JLabel fAlimentTitle1;
     private javax.swing.JTextField fAlimentValueStorage;
-    private javax.swing.JLabel hpLabel;
+    private javax.swing.JLabel icono3;
+    private javax.swing.JLabel icono4;
+    private javax.swing.JLabel icono5;
+    private javax.swing.JLabel icono7;
     private javax.swing.JButton increaseAssembler;
     private javax.swing.JButton increaseCpu;
     private javax.swing.JButton increaseFAliment;
@@ -2110,10 +2391,17 @@ public class AppleSimulador extends javax.swing.JFrame {
     private javax.swing.JButton increaseRAM;
     private javax.swing.JButton increaseTGrafica;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel loteActual;
     private javax.swing.JLabel maxCap;
     private javax.swing.JLabel maxConfTrabLabel;
